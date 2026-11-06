@@ -189,7 +189,15 @@
     }, { rootMargin: "-45% 0px -50% 0px" });
     $$("main section[id]").forEach(function (s) { spy.observe(s); });
   }
-  window.addEventListener("scroll", function () { nav.classList.toggle("scrolled", window.scrollY > 8); }, { passive: true });
+  var bar = $(".progress"), ticking = false;
+  function onScroll() {
+    nav.classList.toggle("scrolled", window.scrollY > 8);
+    var max = document.documentElement.scrollHeight - window.innerHeight;
+    if (bar && max > 0) bar.style.transform = "scaleX(" + Math.min(1, window.scrollY / max) + ")";
+    ticking = false;
+  }
+  window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
+  onScroll();
 
   /* ---------- Clics ---------- */
   document.addEventListener("click", function (e) {

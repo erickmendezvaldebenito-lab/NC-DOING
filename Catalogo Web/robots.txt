@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://ncdoing-catalogo.vercel.app/sitemap.xml
+Sitemap: https://ncdoing-catalogo-liart.vercel.app/sitemap.xml

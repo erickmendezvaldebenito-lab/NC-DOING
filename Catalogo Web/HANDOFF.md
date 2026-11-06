@@ -110,6 +110,6 @@ Cambios sobre la primera versión. **Las fotos y la composición del home no se 
 - **SEO y compartir**: título y descripción, Open Graph (`img/og.jpg`, 1200×630, generada con `index.html#og`), datos estructurados (Organización + 5 productos), `robots.txt`, `sitemap.xml`, ícono SVG.
 - **Publicación**: `vercel.json` (cabeceras y caché), `.vercelignore` (no sube HANDOFF, scripts ni la versión de un solo archivo).
 - **Reconstruir la versión de un solo archivo**: `node scripts/build-single.js`.
-- **Si cambia el dominio**: actualizar la URL en `index.html` (canonical, og:url, og:image, JSON-LD), `robots.txt` y `sitemap.xml` (hoy `https://ncdoing-catalogo.vercel.app/`).
+- **Si cambia el dominio**: actualizar la URL en `index.html` (canonical, og:url, og:image, JSON-LD), `robots.txt` y `sitemap.xml` (hoy `https://ncdoing-catalogo-liart.vercel.app/`).
 
 **Decisiones de estilo defendidas** (el inspector de la skill `design-taste-frontend` las marca, pero son parte de la marca aprobada): etiquetas en mayúsculas sobre los títulos, degradado y brillo del home (foto + vitrina con plataforma), texto con degradado en el título, sombra leve en el texto sobre la foto, bordes finos en tarjetas. Mediciones: antes 16 fallos, ahora 10; todos los restantes son de estilo, no de funcionamiento.

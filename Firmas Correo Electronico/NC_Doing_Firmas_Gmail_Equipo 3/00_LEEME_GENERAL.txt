@@ -1,0 +1,28 @@
+NC DOING | KIT DE FIRMAS DE CORREO PARA TODO EL EQUIPO
+
+Este ZIP contiene seis carpetas, una por persona. Cada carpeta incluye los mismos tipos de archivo y recursos que el kit original de Javiera.
+
+CONTENIDO DE CADA CARPETA
+- 01_Firma_[nombre]_Gmail.html (firma compacta para Gmail con vínculos activos)
+- 02_Manual_Instalacion_Gmail.pdf (manual personal de dos páginas)
+- 03_Vista_Previa.png (imagen de referencia)
+- LEEME.txt (instrucciones rápidas)
+- Recursos/ (logo original negro con detalles azul/naranjo y cuatro íconos azules)
+
+INTEGRANTES
+01_Camilo_Salazar_Ortiz: Camilo Salazar Ortiz - Gerente Operaciones - +56 9 5404 4497
+02_Alejandro_Chaur: Alejandro Chaur - Gerente de Tecnología - +56 9 814 88107
+03_Sebastian_Niklitschek: Sebastián Niklitschek - Gerente General - +56 9 6420 8470
+04_Javiera_Vargas_Munoz: Javiera Vargas Muñoz - Jefa de Proyectos - +56 9 8439 9364
+05_Olivia_Godoy: Olivia Godoy - Jefe de Laboratorio I+D - +56 9 277 14679
+06_Carolina_Riffo: Carolina Riffo - Jefa de Administración y Finanzas - +56 9 6585 1516
+
+Datos de la fuente: Tarjetas NC DOING (1).pdf. Javiera aparece allí como Javiera Vargas; se utiliza Javiera Vargas Muñoz porque ese nombre completo fue entregado previamente por la persona solicitante.
+
+Dirección corporativa: Ejército 315, Concepción (información en todas las tarjetas).
+LinkedIn corporativo: https://www.linkedin.com/company/nc-doing/
+Sitio web: https://www.ncdoing.cl
+
+No incluye las direcciones de email de las tarjetas dentro de la firma porque el diseño original aprobado para Javiera solo contemplaba teléfono, LinkedIn, web y dirección.
+
+IMPORTANTE: los HTML usan imágenes PNG incrustadas (data URI). Gmail puede eliminarlas al pegar. Si ocurre, usar el PNG del directorio Recursos/ desde el editor de firma y comprobar en correo de prueba.

@@ -1,0 +1,264 @@
+<title>Cómo llegar a Edifica</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: cabecera con logo, pestañas por medio de transporte, mapa oficial a la izquierda + pasos a la derecha. Estilo oscuro de marca NC Doing */
+:root{--navy9:#050A18;--navy8:#0A1330;--navy7:#101c45;--blue:#2F7BFF;--orange:#FF7A2B;--yellow:#FFD54A;--soft:#D6E1F7;--mute:#93A6C9;--line:#ffffff24}
+*{box-sizing:border-box;margin:0}
+html{color-scheme:dark}
+body{background:var(--navy9);color:#fff;font-family:-apple-system,"SF Pro Display","Helvetica Neue",Arial,sans-serif;font-size:16px;line-height:1.5;
+ padding-block:20px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+ background-image:radial-gradient(900px 500px at 85% -5%,#17367c 0%,transparent 65%),radial-gradient(700px 500px at 0% 105%,#10285c 0%,transparent 65%)}
+.wrap{max-width:1120px;margin:0 auto;display:grid;gap:20px}
+header{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+header img{height:56px;width:auto}
+header .sep{width:2px;height:44px;background:var(--line)}
+header b{display:block;font-size:20px;letter-spacing:.4px}
+header span{color:var(--soft);font-size:14px}
+h1{font-size:clamp(26px,5vw,40px);line-height:1.1;letter-spacing:-.8px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--orange)}
+.lead{color:var(--soft);max-width:62ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{background:#ffffff14;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:14px;font-weight:600}
+.chip b{color:var(--yellow)}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:4px;background:#ffffff0d;border:1px solid var(--line);border-radius:14px}
+.tabs button{flex:none;font:inherit;font-weight:700;font-size:15px;color:var(--soft);background:none;border:0;border-radius:10px;padding:10px 16px;cursor:pointer;white-space:nowrap}
+.tabs button[aria-selected="true"]{background:var(--orange);color:#1a0a00}
+button:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:20px;align-items:start}
+@media(max-width:860px){.grid{grid-template-columns:minmax(0,1fr)}}
+.mapbox{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 30px 70px #000a,0 0 0 2px #ffffff26;position:relative}
+.mapbox svg{display:block;width:100%;height:auto}
+.mapcap{position:absolute;left:12px;bottom:12px;background:#050A18e6;border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700;color:var(--soft)}
+.side{display:grid;gap:14px;min-width:0}
+.card{background:#ffffff0d;border:1px solid var(--line);border-radius:16px;padding:18px;min-width:0}
+.card h2{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:10px}
+.card h3{font-size:22px;line-height:1.2;margin-bottom:6px}
+ol{list-style:none;padding:0;display:grid;gap:10px}
+ol li{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start}
+ol .n{width:30px;height:30px;border-radius:50%;background:var(--orange);color:#1a0a00;font-weight:800;display:grid;place-items:center;font-size:14px}
+ol p{color:var(--soft);font-size:15px}
+ol b{color:#fff}
+.times{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.times span{background:#ffffff14;border:1px solid var(--line);border-radius:8px;padding:3px 9px;font-size:13px;font-variant-numeric:tabular-nums;font-weight:600}
+.times.back span{border-color:#FF7A2B88}
+.sub{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mute);margin-top:12px;font-weight:700}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.btn{display:inline-block;text-decoration:none;font:inherit;font-weight:700;font-size:15px;border-radius:10px;padding:11px 16px;border:1px solid var(--blue);color:#fff;background:transparent;cursor:pointer}
+.btn.p{background:var(--orange);border-color:var(--orange);color:#1a0a00}
+.seg{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.seg button{font:inherit;font-weight:700;font-size:14px;border:1px solid var(--line);background:#ffffff0d;color:var(--soft);border-radius:999px;padding:7px 14px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+.note{font-size:13px;color:var(--mute)}
+.warn{background:#FFD54A14;border:1px solid #FFD54A66;border-radius:14px;padding:14px 16px;font-size:14px;color:var(--soft)}
+.warn b{color:var(--yellow)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+td{padding:7px 4px;border-top:1px solid var(--line);vertical-align:top}
+td:first-child{width:34px;font-weight:800;color:var(--orange)}
+td small{display:block;color:var(--mute)}
+[hidden]{display:none!important}
+.dot{fill:#FF7A2B;stroke:#fff;stroke-width:5}
+.route{fill:none;stroke:#FF7A2B;stroke-width:13;stroke-linecap:round;stroke-linejoin:round}
+@media(prefers-reduced-motion:reduce){.route{stroke-dasharray:none!important}}
+</style>
+
+<div class="wrap">
+  <header>
+    <img src="{{logo}}" alt="NC Doing">
+    <div class="sep"></div>
+    <div><b>NC DOING en Edifica 2026</b><span>Plaza de la Construcción del Futuro · Zona 2 del Pasillo ConTech</span></div>
+  </header>
+  <div>
+    <h1>Cómo llegar a <em>Espacio Riesco</em></h1>
+    <p class="lead" style="margin-top:8px">Av. El Salto 5000, Huechuraba. Elige tu medio de transporte y sigue el mapa oficial de la feria.</p>
+  </div>
+  <div class="chips">
+    <span class="chip"><b>20, 21 y 22</b> de octubre de 2026</span>
+    <span class="chip"><b>10:00 a 18:00</b> horas</span>
+    <span class="chip">Estacionamiento gratuito</span>
+  </div>
+
+  <div class="tabs" role="tablist" id="tabs">
+    <button role="tab" data-t="auto" aria-selected="true">En auto</button>
+    <button role="tab" data-t="bus" aria-selected="false">Bus gratuito</button>
+    <button role="tab" data-t="van" aria-selected="false">Van Cabify</button>
+    <button role="tab" data-t="pub" aria-selected="false">Transporte público</button>
+    <button role="tab" data-t="int" aria-selected="false">Dentro del recinto</button>
+  </div>
+
+  <!-- AUTO -->
+  <section class="grid" data-p="auto">
+    <div class="mapbox" id="autoMap">
+      <svg id="svgExp" viewBox="0 0 1800 1613" role="img" aria-label="Mapa oficial de ruta vehicular de ingreso a Espacio Riesco con la ruta animada hacia el estacionamiento de expositores">
+        <image href="{{ruta_expositores}}" width="1800" height="1613"/>
+        <path id="rp" class="route" d="M1555 1525 L1470 1490 L1395 1460 L1260 1405 L1225 1350 L1250 1300 L1335 1205 L1340 1100 L1360 1020 L1420 965 L1540 910 L1610 820 L1625 700 L1648 560 L1600 545 L1520 520 L1460 450 L1400 395 L1325 352 L1285 358 L1245 545 L1220 555 L1100 515 L925 430" stroke-dasharray="1 1"/>
+        <circle id="rd" class="dot" r="20" cx="1555" cy="1525"/>
+      </svg>
+      <img id="imgAB" src="{{ruta_ab}}" alt="Mapa oficial de ruta a los lotes A y B" style="display:block;width:100%;height:auto" hidden>
+      <img id="imgC" src="{{ruta_c}}" alt="Mapa oficial de ruta al lote C" style="display:block;width:100%;height:auto" hidden>
+      <span class="mapcap" id="autoCap">Ruta vehicular a estacionamiento de expositores</span>
+    </div>
+    <div class="side">
+      <div class="card">
+        <h2>Elige tu estacionamiento</h2>
+        <div class="seg" id="lots">
+          <button data-l="exp" aria-pressed="true">Expositores (E)</button>
+          <button data-l="ab" aria-pressed="false">Visitantes A y B</button>
+          <button data-l="c" aria-pressed="false">Visitantes C</button>
+        </div>
+        <ol id="autoSteps"></ol>
+        <p class="note" style="margin-top:12px">Gratuito y con cupos limitados. Acceso para movilidad reducida: Av. El Salto esq. Av. Santa Clara.</p>
+      </div>
+      <div class="btns"><a class="btn p" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Espacio%20Riesco%2C%20Av.%20El%20Salto%205000%2C%20Huechuraba">Abrir en Google Maps</a></div>
+    </div>
+  </section>
+
+  <!-- BUS -->
+  <section class="grid" data-p="bus" hidden>
+    <div class="mapbox"><svg viewBox="0 0 800 520" role="img" aria-label="Esquema del bus gratuito entre Metro Escuela Militar y Espacio Riesco">
+      <rect width="800" height="520" fill="#0c1838"/>
+      <path d="M130 400 L400 260 L670 120" fill="none" stroke="#ffffff22" stroke-width="22" stroke-linecap="round"/>
+      <path id="bp" d="M130 400 L400 260 L670 120" fill="none" stroke="#FF7A2B" stroke-width="8" stroke-linecap="round" stroke-dasharray="14 14"/>
+      <circle cx="130" cy="400" r="26" fill="#E3262E" stroke="#fff" stroke-width="4"/><text x="130" y="409" text-anchor="middle" font-size="26" font-weight="800" fill="#fff">M</text>
+      <circle cx="670" cy="120" r="26" fill="#2F7BFF" stroke="#fff" stroke-width="4"/><text x="670" y="129" text-anchor="middle" font-size="26" font-weight="800" fill="#fff">E</text>
+      <text x="130" y="452" text-anchor="middle" font-size="22" font-weight="800" fill="#fff">Metro Escuela Militar</text>
+      <text x="130" y="478" text-anchor="middle" font-size="16" fill="#D6E1F7">Paso bajo nivel · frente al paradero</text>
+      <text x="670" y="78" text-anchor="middle" font-size="22" font-weight="800" fill="#fff">Espacio Riesco</text>
+      <text x="670" y="190" text-anchor="middle" font-size="16" fill="#D6E1F7">Regresos desde estacionamiento B</text>
+      <g id="bbus"><rect x="-26" y="-15" width="52" height="30" rx="8" fill="#FFD54A" stroke="#050A18" stroke-width="3"/><circle cx="-12" cy="16" r="6" fill="#050A18"/><circle cx="12" cy="16" r="6" fill="#050A18"/></g>
+    </svg><span class="mapcap">Esquema referencial, sin escala</span></div>
+    <div class="side"><div class="card">
+      <h2>Gratis · ida y regreso · 20 al 22 oct</h2>
+      <ol>
+        <li><span class="n">1</span><p><b>Llega a Metro Escuela Militar.</b> El punto de subida está frente al paradero de buses Américo Vespucio, en el paso bajo nivel del Metro.</p></li>
+        <li><span class="n">2</span><p><b>Sube al bus gratuito</b> hacia Espacio Riesco en alguno de estos horarios.</p></li>
+      </ol>
+      <div class="sub">Salidas hacia Espacio Riesco</div>
+      <div class="times"><span>09:30</span><span>10:00</span><span>10:30</span><span>11:00</span><span>11:30</span><span>12:00</span><span>13:00</span></div>
+      <div class="sub">Regresos</div>
+      <div class="times back"><span>15:30</span><span>16:30</span><span>17:00</span><span>17:30</span><span>18:00</span><span>18:30</span></div>
+      <p class="note" style="margin-top:12px">Todos los regresos salen del estacionamiento B, al exterior del recinto.</p>
+    </div>
+    <div class="btns"><a class="btn p" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=Metro%20Escuela%20Militar%2C%20Las%20Condes%2C%20Chile">Metro Escuela Militar en Google Maps</a></div></div>
+  </section>
+
+  <!-- VAN -->
+  <section class="grid" data-p="van" hidden>
+    <div class="mapbox"><img src="{{cabify}}" alt="Mapa oficial del punto de encuentro de las vans Cabify en Las Bellotas, frente al SII" style="display:block;width:100%;height:auto"><span class="mapcap">Mapa oficial de la organización</span></div>
+    <div class="side"><div class="card">
+      <h2>Gratis · cupos limitados · 20 al 22 oct</h2>
+      <h3>Metro Los Leones → Espacio Riesco</h3>
+      <ol>
+        <li><span class="n">1</span><p><b>Salida 1 · Línea 6:</b> Av. Providencia con Suecia, 4 min caminando.</p></li>
+        <li><span class="n">2</span><p><b>Salida 2 · Línea 1:</b> Av. Nueva Providencia, 2 min caminando.</p></li>
+        <li><span class="n">3</span><p><b>Punto de encuentro:</b> Las Bellotas, frente al SII. La van te lleva al interior de Espacio Riesco.</p></li>
+      </ol>
+      <div class="sub">Ida · 09:00 a 13:00</div><p class="note">1 van cada 30 minutos</p>
+      <div class="sub">Regreso a Metro · 15:00 a 18:30</div><p class="note">1 van cada 30 minutos</p>
+    </div>
+    <div class="btns"><a class="btn p" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=SII%20Providencia%2C%20Las%20Bellotas%2C%20Providencia%2C%20Chile">Punto de subida en Google Maps</a></div></div>
+  </section>
+
+  <!-- PUBLICO -->
+  <section class="grid" data-p="pub" hidden>
+    <div class="mapbox"><img src="{{paraderos}}" alt="Mapa oficial con los cinco paraderos de bajada cerca de Espacio Riesco" style="display:block;width:100%;height:auto"><span class="mapcap">Mapa oficial de la organización</span></div>
+    <div class="side"><div class="card">
+      <h2>Paraderos de bajada</h2>
+      <table>
+        <tr><td>1</td><td>Parada Espacio Riesco, Av. El Salto<small>PB768</small></td></tr>
+        <tr><td>2</td><td>Av. El Salto esq. Av. Santa Clara<small>PB767</small></td></tr>
+        <tr><td>3</td><td>Av. Del Parque esq. Los Jardines<small>PB142</small></td></tr>
+        <tr><td>4</td><td>Parada 2 Palacio Riesco<small>PB116</small></td></tr>
+        <tr><td>5</td><td>Parada 1 Palacio Riesco<small>PB132</small></td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <h2>Recorridos desde tu origen</h2>
+      <div class="seg" id="origins"></div>
+      <div id="originInfo" style="color:var(--soft);font-size:15px"></div>
+      <p class="note" style="margin-top:10px">Para volver, toma el mismo recorrido en el paradero de la vereda opuesta. Revisa tiempos en la app Red o en red.cl.</p>
+    </div></div>
+  </section>
+
+  <!-- INTERIOR -->
+  <section class="grid" data-p="int" hidden>
+    <div class="mapbox"><img src="{{plano}}" alt="Plano oficial del recinto con halls 1 al 4, accesos, pasarelas peatonales y estacionamientos" style="display:block;width:100%;height:auto"><span class="mapcap">Plano oficial de la organización</span></div>
+    <div class="side">
+      <div class="card">
+        <h2>Cómo entrar</h2>
+        <ol>
+          <li><span class="n">1</span><p><b>Desde los lotes A y B</b> cruza Av. Santa Clara por la pasarela peatonal. Hay una hacia el Acceso Poniente y otra hacia el Acceso Oriente.</p></li>
+          <li><span class="n">2</span><p><b>Acceso Oriente</b> es la Acreditación 1. <b>Acceso Poniente</b> es la Acreditación 2.</p></li>
+          <li><span class="n">3</span><p><b>Expositores:</b> el estacionamiento E queda junto al Acceso Poniente, en Av. El Salto 5.300.</p></li>
+          <li><span class="n">4</span><p><b>Desde Av. El Salto</b> hay un acceso y salida peatonal directo al recinto.</p></li>
+        </ol>
+      </div>
+      <div class="warn"><b>Ubicación del stand.</b> La Plaza de la Construcción del Futuro y el Pasillo ConTech no aparecen en el plano público ni en el catálogo de expositores. Confirma el número de stand con la organización o en la acreditación y lo agrego al mapa.</div>
+    </div>
+  </section>
+
+  <p class="note">Información y mapas tomados de edifica.cl/plan-de-movilidad y edifica.cl/plano-interactivo. Los mapas pertenecen a la organización de Edifica y pueden cambiar.</p>
+</div>
+
+<script>
+var $=function(s,r){return (r||document).querySelector(s)};
+var panels=document.querySelectorAll('[data-p]');
+document.querySelectorAll('#tabs button').forEach(function(b){b.onclick=function(){
+  document.querySelectorAll('#tabs button').forEach(function(x){x.setAttribute('aria-selected',x===b)});
+  panels.forEach(function(p){p.hidden=p.dataset.p!==b.dataset.t});
+}});
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* AUTO */
+var LOTS={
+ exp:{cap:'Ruta vehicular a estacionamiento de expositores',steps:[
+  ['<b>Entra por Autopista Vespucio Norte</b> y toma Av. Del Parque, luego La Rinconada.'],
+  ['<b>Gira a Av. El Salto</b> y sigue la línea verde hasta el estacionamiento de expositores (E), en Av. El Salto 5.300.'],
+  ['<b>Camina al Acceso Poniente</b> (Acreditación 2) y acredítate.']]},
+ ab:{cap:'Ruta a estacionamientos A y B (visitantes)',steps:[
+  ['<b>Si vienes desde el sur:</b> Av. El Salto, o Av. El Parque hasta Av. Santa Clara.'],
+  ['<b>Si vienes desde el poniente:</b> Av. Recoleta, Av. Santa Clara o Av. Salvador Allende, Av. El Bosque de Santiago y Av. El Salto.'],
+  ['<b>Estaciona en A o B</b> y cruza Av. Santa Clara por la pasarela peatonal.']]},
+ c:{cap:'Ruta al estacionamiento C (visitantes)',steps:[
+  ['<b>Si vienes desde el sur:</b> Av. El Parque y La Rinconada hasta Av. El Salto.'],
+  ['<b>Estaciona en C</b> y entra por el acceso peatonal de Av. El Salto.']]}
+};
+function setLot(k){
+  document.querySelectorAll('#lots button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===k)});
+  $('#svgExp').hidden=k!=='exp';$('#imgAB').hidden=k!=='ab';$('#imgC').hidden=k!=='c';
+  $('#autoCap').textContent=LOTS[k].cap;
+  $('#autoSteps').innerHTML=LOTS[k].steps.map(function(s,i){return '<li><span class="n">'+(i+1)+'</span><p>'+s[0]+'</p></li>'}).join('');
+}
+document.querySelectorAll('#lots button').forEach(function(b){b.onclick=function(){setLot(b.dataset.l)}});
+setLot('exp');
+
+/* ruta animada sobre el mapa oficial */
+var rp=$('#rp'),rd=$('#rd'),RL=rp.getTotalLength();
+function frame(t){
+  var u=reduce?1:((t/9000)%1.25);u=Math.min(1,u/1);
+  var e=u<.5?2*u*u:1-Math.pow(-2*u+2,2)/2;
+  rp.setAttribute('stroke-dasharray',(RL*e)+' '+RL);
+  var p=rp.getPointAtLength(RL*e);rd.setAttribute('cx',p.x);rd.setAttribute('cy',p.y);
+  /* bus */
+  var bp=$('#bp'),bb=$('#bbus');
+  if(bp&&bb&&!bp.closest('[data-p]').hidden){var L=bp.getTotalLength(),q=reduce?1:((t/6000)%1),pp=bp.getPointAtLength(L*q);bb.setAttribute('transform','translate('+pp.x+' '+pp.y+')')}
+  requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+
+/* transporte público */
+var OR={
+ 'Tobalaba / Vitacura (Costanera)':['Buses C06, 117, 117C. Sube en PC1227, Nueva Tajamar esq. Av. Andrés Bello. Baja en paradero 1 o 3. Caminata de 8 min.'],
+ 'Metro Tobalaba':['Bus C06. Sube en PC155, Parada 1 Metro Tobalaba. Baja en paradero 3. Caminata de 5 min.'],
+ 'Metro Escuela Militar':['Bus C18. Sube en PC57, Parada 8 Metro Escuela Militar. Baja en paradero 1. Caminata de 3 min.'],
+ 'Vital Apoquindo con Bilbao':['Bus 722. Sube en PC667, Vital Apoquindo esq. Av. Francisco Bilbao. Baja en paradero 4. Caminata de 8 min.'],
+ 'Metro Santa Lucía':['Bus B02. Sube en PA109, Parada 8 Metro Santa Lucía. Baja en paradero 1. Caminata de 2 min.'],
+ 'Metro Puente Cal y Canto':['Bus B14. Sube en PA87, Parada 7 Estación Mapocho. Baja en paradero 2. Caminata de 5 min.'],
+ 'Metro Dorsal':['Bus B15. Sube en PB1613, Parada 6 Metro Dorsal. Baja en paradero 2. Caminata de 5 min.'],
+ 'Plaza Baquedano':['Bus B15. Sube en PC145, Parada 3 Plaza Italia. Baja en paradero 2. Caminata de 5 min.'],
+ 'Metro Los Libertadores':['Buses 425 y 429. Sube en PB504, Parada 4 Metro Los Libertadores. Baja en paradero 5. Caminata de 15 min.'],
+ 'Departamental Oriente':['Bus 418 y combina con C06. Sube en PD64, Av. Las Torres, y combina en PC392, Av. Tobalaba. Baja en paradero 3. Caminata de 5 min.']
+};
+var oe=$('#origins');
+Object.keys(OR).forEach(function(k,i){var b=document.createElement('button');b.type='button';b.textContent=k;b.setAttribute('aria-pressed',i===0);b.onclick=function(){oe.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b)});$('#originInfo').textContent=OR[k][0]};oe.appendChild(b)});
+$('#originInfo').textContent=OR['Tobalaba / Vitacura (Costanera)'][0];
+</script>

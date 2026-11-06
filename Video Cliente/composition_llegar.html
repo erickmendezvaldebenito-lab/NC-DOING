@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>NC DOING · Cómo llegar a Edifica 2026</title>
+<style>
+:root{--navy9:#050A18;--navy8:#0A1330;--blue:#2F7BFF;--orange:#FF7A2B;--yellow:#FFD54A;--soft:#D6E1F7;--mute:#93A6C9}
+*{box-sizing:border-box;margin:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--navy9);font-family:-apple-system,"SF Pro Display","Helvetica Neue",Arial,sans-serif;color:#fff}
+.abs{position:absolute}
+#bg{position:absolute;inset:-100px;background:radial-gradient(1100px 700px at 82% 12%,#17367c 0%,transparent 62%),radial-gradient(900px 600px at 4% 104%,#10285c 0%,transparent 62%),linear-gradient(160deg,var(--navy8),var(--navy9))}
+#grid{position:absolute;inset:0;opacity:.06;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:64px 64px}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 55%,#0008 100%)}
+#hdr{inset:0;opacity:0}
+#hlogo{left:96px;top:52px;height:76px}
+#hdiv{left:206px;top:60px;width:2px;height:60px;background:#ffffff33}
+#hname{left:230px;top:62px;font-size:25px;line-height:1.3;color:var(--soft)}
+#hname b{display:block;font-size:30px;color:#fff;letter-spacing:.5px}
+#tag{right:96px;top:68px;font-size:20px;letter-spacing:3.5px;color:var(--soft);text-transform:uppercase;border:1.5px solid #ffffff3a;padding:11px 22px;border-radius:40px}
+.stage{position:absolute;inset:0;opacity:0}
+.center{position:absolute;left:0;right:0;text-align:center}
+.lg{position:absolute;left:50%;transform:translateX(-50%);top:130px;height:250px}
+.big{top:450px;font-size:96px;font-weight:800;line-height:1.05;letter-spacing:-2px}
+.big em{font-style:normal;color:var(--orange)}
+.sub{top:740px;font-size:36px;color:var(--soft)}
+.line{position:absolute;left:50%;top:705px;width:180px;margin-left:-90px;height:5px;border-radius:5px;background:linear-gradient(90deg,var(--blue),var(--orange))}
+.pills{position:absolute;left:0;right:0;top:860px;display:flex;justify-content:center;gap:16px}
+.pill{font-size:27px;padding:13px 26px;border-radius:40px;background:#ffffff16;border:1.5px solid #ffffff30}
+.pill b{color:var(--yellow)}
+/* panel izquierdo compartido */
+#left{position:absolute;inset:0;opacity:0}
+#kick{position:absolute;left:96px;top:200px;font-size:24px;letter-spacing:4px;color:var(--orange);font-weight:700;text-transform:uppercase}
+#num{position:absolute;left:92px;top:236px;font-size:210px;font-weight:800;line-height:1;letter-spacing:-6px;color:var(--yellow);font-variant-numeric:tabular-nums}
+#num span{font-size:78px;letter-spacing:0;margin-left:12px;color:#fff;opacity:.9}
+#ttl{position:absolute;left:96px;top:474px;width:650px;font-size:54px;font-weight:800;line-height:1.08;letter-spacing:-1px}
+#ttl em{font-style:normal;color:var(--orange)}
+#dsc{position:absolute;left:98px;top:640px;width:630px;font-size:29px;line-height:1.35;color:var(--soft)}
+#tl{position:absolute;left:96px;top:840px;width:560px;height:110px}
+#tltrack{position:absolute;left:0;right:0;top:20px;height:8px;border-radius:8px;background:#ffffff22}
+#tlfill{position:absolute;left:0;top:0;height:8px;border-radius:8px;background:linear-gradient(90deg,var(--blue),var(--orange));width:0}
+.ms{position:absolute;top:0;width:170px;transform:translateX(-50%);text-align:center;font-size:20px;color:#7f93bb;font-weight:700}
+.ms i{display:block;margin:0 auto 12px;width:36px;height:36px;border-radius:50%;background:var(--navy8);border:4px solid #ffffff33}
+.ms.on{color:#fff}.ms.on i{background:var(--orange);border-color:var(--orange);box-shadow:0 0 0 8px #FF7A2B44}
+#chips{position:absolute;left:96px;top:760px;display:flex;gap:10px;flex-wrap:wrap;width:660px}
+.chip{font-size:22px;padding:7px 15px;border-radius:40px;background:#ffffff16;border:1.5px solid #ffffff30;font-variant-numeric:tabular-nums;font-weight:700}
+.chip.o{border-color:#FF7A2B99}
+.chips-l{flex-basis:100%;font-size:18px;letter-spacing:3px;color:var(--mute);font-weight:700;text-transform:uppercase;margin-top:6px}
+/* mapa */
+.mapf{position:absolute;left:800px;top:150px;width:1024px;height:810px;border-radius:28px;overflow:hidden;box-shadow:0 40px 90px #000a,0 0 0 2px #ffffff26;background:#fff;opacity:0}
+.mapf.dark{background:#0a1635}
+.mapf svg{position:absolute;inset:0;width:100%;height:100%}
+.mtag{position:absolute;left:18px;bottom:18px;padding:10px 22px;border-radius:40px;background:#050A18e0;border:1.5px solid #ffffff33;font-size:22px;font-weight:700}
+.mtag i{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--orange);margin-right:10px}
+#disc{position:absolute;left:0;right:0;bottom:36px;text-align:center;font-size:20px;color:#7f93bb;opacity:0}
+</style></head><body>
+<div id="bg"></div><div id="grid"></div><div id="vig"></div>
+
+<div id="hdr" class="abs">
+  <img id="hlogo" class="abs" src="assets/logo_dark_s.png"><div id="hdiv" class="abs"></div>
+  <div id="hname" class="abs"><b>NC DOING</b>Nanotecnología aplicada a madera</div>
+  <div id="tag" class="abs">Cómo llegar · Edifica 2026</div>
+</div>
+
+<div class="stage" id="intro">
+  <img class="lg" src="assets/logo_dark_s.png">
+  <div class="center big">Cómo llegar a <em>Edifica 2026</em></div>
+  <div class="line"></div>
+  <div class="center sub">Espacio Riesco · Av. El Salto 5000, Huechuraba</div>
+  <div class="pills"><div class="pill"><b>20, 21 y 22</b> de octubre</div><div class="pill"><b>10:00 a 18:00</b> horas</div></div>
+</div>
+
+<div id="left">
+  <div id="kick"></div><div id="num"></div><div id="ttl"></div><div id="dsc"></div>
+  <div id="chips"></div>
+  <div id="tl"><div id="tltrack"><div id="tlfill"></div></div></div>
+</div>
+
+<div class="mapf" id="m_auto"><svg id="sv_auto" viewBox="0 0 1800 1424" preserveAspectRatio="xMidYMid slice">
+  <image href="assets/mapas/ruta-lotes-ab.jpg" width="1800" height="1627"/>
+  <path id="rp_auto" fill="none" stroke="#050A18" stroke-opacity=".25" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" d="M1218 1375 L1045 1275 L1055 1150 L1100 980 L1165 790 L1140 745"/>
+  <path id="rt_auto" fill="none" stroke="#FF7A2B" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" d="M1218 1375 L1045 1275 L1055 1150 L1100 980 L1165 790 L1140 745"/>
+  <g id="dot_auto"><circle r="34" fill="#2F7BFF" fill-opacity=".35"/><circle r="18" fill="#fff" stroke="#2F7BFF" stroke-width="7"/></g>
+</svg><div class="mtag"><i></i>Mapa oficial de Edifica</div></div>
+
+<div class="mapf dark" id="m_bus"><svg viewBox="0 0 1000 791" preserveAspectRatio="xMidYMid slice">
+  <defs><pattern id="gp" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#fff" stroke-opacity=".06"/></pattern></defs>
+  <rect width="1000" height="791" fill="url(#gp)"/>
+  <path id="bp" d="M170 620 L470 620 L470 330 L830 330" fill="none" stroke="#ffffff" stroke-opacity=".16" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+  <path id="bt" d="M170 620 L470 620 L470 330 L830 330" fill="none" stroke="#FF7A2B" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="170" cy="620" r="40" fill="#E3262E" stroke="#fff" stroke-width="6"/><text x="170" y="634" text-anchor="middle" font-size="40" font-weight="800" fill="#fff" font-family="Arial">M</text>
+  <text x="170" y="692" text-anchor="middle" font-size="30" font-weight="800" fill="#fff" font-family="Arial">Metro Escuela Militar</text>
+  <text x="170" y="728" text-anchor="middle" font-size="22" fill="#D6E1F7" font-family="Arial">Paso bajo nivel</text>
+  <circle cx="830" cy="330" r="40" fill="#2F7BFF" stroke="#fff" stroke-width="6"/><text x="830" y="344" text-anchor="middle" font-size="38" font-weight="800" fill="#fff" font-family="Arial">E</text>
+  <text x="830" y="270" text-anchor="middle" font-size="32" font-weight="800" fill="#fff" font-family="Arial">Espacio Riesco</text>
+  <g id="bus"><rect x="-44" y="-26" width="88" height="52" rx="12" fill="#FFD54A" stroke="#050A18" stroke-width="5"/><rect x="-32" y="-16" width="64" height="16" rx="4" fill="#050A18" fill-opacity=".7"/><circle cx="-24" cy="28" r="9" fill="#050A18"/><circle cx="24" cy="28" r="9" fill="#050A18"/></g>
+</svg><div class="mtag"><i></i>Esquema referencial</div></div>
+
+<div class="mapf" id="m_van"><svg id="sv_van" viewBox="0 0 1200 949" preserveAspectRatio="xMidYMid slice">
+  <image href="assets/mapas/mapa-cabify.jpg" width="1200" height="1129"/>
+  <circle id="ring_van" cx="568" cy="858" r="40" fill="none" stroke="#FF7A2B" stroke-width="8"/>
+  <circle id="ring_van2" cx="568" cy="858" r="40" fill="none" stroke="#FF7A2B" stroke-width="8"/>
+</svg><div class="mtag"><i></i>Mapa oficial de Edifica</div></div>
+
+<div class="mapf dark" id="m_pub"><svg id="sv_pub" viewBox="0 0 1200 949" preserveAspectRatio="xMidYMid slice">
+  <image href="assets/mapas/mapa-paraderos.jpg" width="1200" height="1286"/>
+  <g id="pr"></g>
+</svg><div class="mtag"><i></i>Mapa oficial de Edifica</div></div>
+
+<div class="mapf" id="m_rec"><svg id="sv_rec" viewBox="0 0 2000 1582" preserveAspectRatio="xMidYMid slice">
+  <image href="assets/mapas/plano-general-estacionamientos.jpg" width="2000" height="1302" y="0"/>
+  <path id="rt_rec" fill="none" stroke="#FF7A2B" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" d="M1620 330 L1560 470 L1500 540 L1495 683 L1300 683"/>
+  <circle id="ring_rec" cx="1285" cy="745" r="40" fill="none" stroke="#FF7A2B" stroke-width="8"/>
+  <circle id="ring_rec2" cx="1285" cy="745" r="40" fill="none" stroke="#FF7A2B" stroke-width="8"/>
+  <g id="dot_rec"><circle r="30" fill="#2F7BFF" fill-opacity=".35"/><circle r="16" fill="#fff" stroke="#2F7BFF" stroke-width="7"/></g>
+</svg><div class="mtag"><i></i>Plano oficial de Edifica</div></div>
+
+<div class="stage" id="outro">
+  <img class="lg" src="assets/logo_dark_s.png">
+  <div class="center big" style="font-size:84px">Te esperamos en la <em>Zona 2</em><br>del Pasillo ConTech</div>
+  <div class="center sub" style="top:740px">Plaza de la Construcción del Futuro · edifica.cl</div>
+  <div class="pills"><div class="pill"><b>20, 21 y 22</b> de octubre de 2026</div><div class="pill"><b>10:00 a 18:00</b> horas</div></div>
+</div>
+<div id="disc">Mapas y horarios según edifica.cl/plan-de-movilidad. Confirma el plano de la feria en edifica.cl.</div>
+
+<script>
+const TOTAL=30, FADE=.55;
+const INTRO=[0,2.8], OUTRO=[27,30];
+const SC={bus:[2.8,7.8],van:[7.8,12.6],pub:[12.6,17.4],rec:[17.4,27.2]};
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const outq=x=>1-Math.pow(1-x,3);
+const lerp=(a,b,t)=>a+(b-a)*t;
+const $=id=>document.getElementById(id);
+const kick=$('kick'),num=$('num'),ttl=$('ttl'),dsc=$('dsc'),chips=$('chips');
+
+/* ---- textos de cada escena ---- */
+const TXT={
+ auto:{k:'En auto · estacionamiento gratuito',n:3,steps:[
+   ['Toma <em>Autopista Vespucio Norte</em>','Sigue hacia Av. El Salto y la ruta vehicular de ingreso.'],
+   ['Sigue por <em>Av. El Salto</em>','Acércate a Espacio Riesco, en el número 5000.'],
+   ['Estaciona en <em>los lotes A o B</em>','Estacionamiento gratuito, con cupos limitados.']]},
+ bus:{k:'Bus gratuito · Metro Escuela Militar',n:2,steps:[
+   ['Llega a <em>Metro Escuela Militar</em>','Frente al paradero de buses Américo Vespucio, en el paso bajo nivel.'],
+   ['Sube al <em>bus gratuito</em>','Ida y regreso a Espacio Riesco los tres días de feria.']]},
+ van:{k:'Van gratuita · Metro Los Leones',n:2,steps:[
+   ['Sal por <em>Metro Los Leones</em>','Salida 1 (Línea 6): 4 min a pie. Salida 2 (Línea 1): 2 min a pie.'],
+   ['Punto de encuentro: <em>Las Bellotas</em>','Frente al SII. La van te lleva al interior de Espacio Riesco.']]},
+ pub:{k:'Transporte público',n:2,steps:[
+   ['Bájate en <em>Av. El Salto</em>','Hay 5 paraderos de bajada cerca del recinto. Ejemplo: bus C18 desde Metro Escuela Militar, 3 min a pie.'],
+   ['Revisa tu <em>recorrido en red.cl</em>','Para volver, toma el mismo recorrido en el paradero de la vereda opuesta.']]},
+ rec:{k:'Dentro del recinto',n:2,steps:[
+   ['Ingresa por el <em>acceso peatonal</em>','Entrada directa desde Av. El Salto hacia el Acceso Oriente.'],
+   ['Acredítate y busca la <em>Zona 2</em>','En Acreditación 1. Nos encuentras en la Plaza de la Construcción del Futuro, Pasillo ConTech.']]}
+};
+const BUS_OUT=['09:30','10:00','10:30','11:00','11:30','12:00','13:00'], BUS_BACK=['15:30','16:30','17:00','17:30','18:00','18:30'];
+function chipsHTML(id){
+ if(id==='bus') return '<div class="chips-l">Salidas a Espacio Riesco</div>'+BUS_OUT.map(t=>'<span class="chip">'+t+'</span>').join('')+'<div class="chips-l" style="margin-top:14px">Regresos</div>'+BUS_BACK.map(t=>'<span class="chip o">'+t+'</span>').join('');
+ if(id==='van') return '<div class="chips-l">Ida · una van cada 30 min</div><span class="chip">09:00 a 13:00</span><div class="chips-l" style="margin-top:14px">Regreso a Metro · una van cada 30 min</div><span class="chip o">15:00 a 18:30</span>';
+ return '';
+}
+let cur='', curStep=-1;
+function setText(id,step){
+ if(id===cur&&step===curStep) return;
+ const t=TXT[id];
+ if(id!==cur){kick.textContent=t.k;chips.innerHTML=chipsHTML(id);chips.style.top='745px';
+   $('tl').innerHTML='<div id="tltrack"><div id="tlfill"></div></div>'+Array.from({length:t.n},(_,i)=>'<div class="ms" id="ms'+i+'" style="left:'+(t.n===1?0:i/(t.n-1)*100)+'%"><i></i>Paso '+(i+1)+'</div>').join('');
+   $('tl').style.top='840px';if(chipsHTML(id))$('tl').innerHTML='';}
+ cur=id;curStep=step;
+ num.innerHTML=(step+1)+'<span>/'+t.n+'</span>';ttl.innerHTML=t.steps[step][0];dsc.textContent=t.steps[step][1];
+}
+function setTL(frac,n){const f=$('tlfill');if(f)f.style.width=(frac*100)+'%';for(let i=0;i<n;i++){const m=$('ms'+i);if(m)m.classList.toggle('on',frac>=i/(n-1)-.01)}}
+
+/* ---- caminos y cámaras ---- */
+const rpA=$('rt_auto'),LA=rpA.getTotalLength();
+const rpR=$('rt_rec'),LR=rpR.getTotalLength();
+const bt=$('bt'),LB=bt.getTotalLength();
+function view(svg,w,ar,cx,cy,W,H){const h=w/ar;cx=clamp(cx,w/2,W-w/2);cy=clamp(cy,h/2,H-h/2);svg.setAttribute('viewBox',(cx-w/2)+' '+(cy-h/2)+' '+w+' '+h)}
+const AR=1024/810;
+function ring(el,t,k,ph,r0,r1){const q=((t*.7)+ph)%1;el.setAttribute('r',r0+q*(r1-r0));el.setAttribute('stroke-opacity',(1-q)*.8*k)}
+
+// paraderos (coordenadas del mapa oficial)
+const PM=[[595,420],[550,540],[948,588],[470,808],[400,1050]];
+$('pr').innerHTML=PM.map((p,i)=>'<circle class="pc" cx="'+p[0]+'" cy="'+p[1]+'" r="40" fill="none" stroke="#FFD54A" stroke-width="9" stroke-opacity="0"/>').join('');
+
+window.__seek=function(t){
+  // visibilidad de escenas
+  const vis={};
+  const fadeOf=(a,b,first,last)=>ease(first?1:clamp((t-a)/FADE))*ease(last?1:clamp((b-t)/FADE));
+  const vI=fadeOf(INTRO[0],INTRO[1]+.2,true,false), vO=fadeOf(OUTRO[0],OUTRO[1],false,true);
+  $('intro').style.opacity=vI;$('outro').style.opacity=vO;
+  [$('intro'),$('outro')].forEach(el=>{const a=el===$('intro')?INTRO[0]:OUTRO[0];[...el.children].forEach((c,k)=>{if(c.classList.contains('lg')||c.classList.contains('line'))return;const q=outq(clamp((t-a-.1-k*.1)/.7));c.style.opacity=q;c.style.translate='0 '+((1-q)*26)+'px'})});
+  let active=null;
+  for(const id in SC){const[a,b]=SC[id];const v=ease(clamp((t-a)/FADE))*ease(clamp((b+.3-t)/FADE));$('m_'+id).style.opacity=v;if(t>=a-.01&&t<=b+.3)active=id}
+  const inR=t>=SC.bus[0]&&t<=SC.rec[1]+.3;
+  const lv=ease(clamp((t-SC.bus[0])/FADE))*ease(clamp((SC.rec[1]+.3-t)/FADE));
+  $('left').style.opacity=lv;$('hdr').style.opacity=lv;
+  $('disc').style.opacity=ease(clamp((t-SC.rec[1]-.6)/.8))*ease(clamp((OUTRO[1]-t)/.6))*.9;
+  $('bg').style.transform='translate('+Math.sin(t/9)*28+'px,'+Math.cos(t/11)*20+'px)';
+  if(!active) return;
+  const[a,b]=SC[active]; const u=clamp((t-a)/(b-a));
+  if(active==='auto'){
+    const f=ease(clamp((u-.08)/.78));
+    const pt=rpA.getPointAtLength(LA*f);
+    rpA.setAttribute('stroke-dasharray',(LA*f)+' '+LA);
+    $('dot_auto').setAttribute('transform','translate('+pt.x+' '+pt.y+')');$('dot_auto').setAttribute('opacity',1);
+    const k=ease(clamp(u/.08));let w=lerp(1800,980,k);w=lerp(w,820,ease(clamp((u-.82)/.18)));
+    view($('sv_auto'),w,AR,lerp(900,pt.x,k),lerp(712,pt.y,k),1800,1627);
+    const st=f>=.94?2:(f>=.12?1:0);setText('auto',st);setTL(f,3);
+  }
+  if(active==='bus'){
+    const f=ease(clamp((u-.45)/.5));const pt=bt.getPointAtLength(LB*f);
+    $('bus').setAttribute('transform','translate('+pt.x+' '+pt.y+')');
+    bt.setAttribute('stroke-dasharray',(LB*f)+' '+LB);
+    setText('bus',u<.45?0:1);setTL(u<.45?0:f,2);
+  }
+  if(active==='van'){
+    const k1=ease(clamp((u-.15)/.35)),k2=ease(clamp((u-.55)/.4));
+    let w=lerp(1200,900,k1);w=lerp(w,720,k2);
+    view($('sv_van'),w,AR,lerp(600,lerp(380,568,k2),k1),lerp(470,lerp(560,840,k2),k1),1200,1129);
+    const ro=ease(clamp((u-.5)/.15));ring($('ring_van'),t,ro,0,36,110);ring($('ring_van2'),t,ro,.5,36,110);
+    setText('van',u<.5?0:1);setTL(u<.5?.2:1,2);
+  }
+  if(active==='pub'){
+    const k=ease(clamp(u/.3));view($('sv_pub'),lerp(1200,980,k),AR,lerp(600,560,k),lerp(480,560,k),1200,1286);
+    document.querySelectorAll('.pc').forEach((c,i)=>{const s=.18+i*.1;const on=ease(clamp((u-s)/.1));const q=((t*.8)+i*.2)%1;c.setAttribute('r',40+q*60);c.setAttribute('stroke-opacity',on*(1-q)*.9)});
+    setText('pub',u<.55?0:1);setTL(u<.55?.15:1,2);
+  }
+  if(active==='rec'){
+    const f=ease(clamp((u-.1)/.5));const pt=rpR.getPointAtLength(LR*f);
+    rpR.setAttribute('stroke-dasharray',(LR*f)+' '+LR);
+    $('dot_rec').setAttribute('transform','translate('+pt.x+' '+pt.y+')');$('dot_rec').setAttribute('opacity',1-ease(clamp((f-.96)/.04)));
+    const k=ease(clamp(u/.1));let w=lerp(2000,1300,k);
+    view($('sv_rec'),w,AR,lerp(1000,1380,k),lerp(651,640,k),2000,1302);
+    const ro=ease(clamp((u-.55)/.15));ring($('ring_rec'),t,ro,0,36,110);ring($('ring_rec2'),t,ro,.5,36,110);
+    setText('rec',f>=.97?1:0);setTL(f>=.97?1:f*.5,2);
+  }
+};
+window.__seek(0);
+</script></body></html>

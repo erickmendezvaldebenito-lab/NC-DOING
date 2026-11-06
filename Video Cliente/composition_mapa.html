@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mapa Stand NC Doing</title>
+<style>
+:root{--navy9:#050A18;--navy8:#0A1330;--blue:#2F7BFF;--orange:#FF7A2B;--yellow:#FFD54A;--soft:#D6E1F7;--mute:#93A6C9}
+*{box-sizing:border-box;margin:0}
+html,body{height:100%;background:var(--navy9);font-family:-apple-system,"SF Pro Display","Helvetica Neue",Arial,sans-serif;color:#fff;overflow:hidden}
+#shell{position:fixed;inset:0;display:flex;flex-direction:column}
+#fit{flex:1;min-height:0;position:relative;overflow:hidden}
+#stage{position:absolute;left:0;top:0;width:1920px;height:1080px;transform-origin:0 0;overflow:hidden;background:var(--navy9)}
+body.render #shell{display:block}
+body.render #fit{position:static;overflow:visible}
+body.render #stage{transform:none!important}
+body.render #ctl{display:none}
+.abs{position:absolute}
+#bg{position:absolute;inset:-100px;background:radial-gradient(1100px 700px at 82% 12%,#17367c 0%,transparent 62%),radial-gradient(900px 600px at 4% 104%,#10285c 0%,transparent 62%),linear-gradient(160deg,var(--navy8),var(--navy9))}
+#grid{position:absolute;inset:0;opacity:.06;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:64px 64px}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 55%,#0008 100%)}
+#hdr{inset:0;opacity:0}
+#hlogo{left:96px;top:52px;height:76px}
+#hdiv{left:206px;top:60px;width:2px;height:60px;background:#ffffff33}
+#hname{left:230px;top:62px;font-size:25px;line-height:1.3;color:var(--soft)}
+#hname b{display:block;font-size:30px;color:#fff;letter-spacing:.5px}
+#tag{right:96px;top:68px;font-size:20px;letter-spacing:3.5px;color:var(--soft);text-transform:uppercase;border:1.5px solid #ffffff3a;padding:11px 22px;border-radius:40px}
+.stage{position:absolute;inset:0;opacity:0}
+.center{position:absolute;left:0;right:0;text-align:center}
+.lg{position:absolute;left:50%;transform:translateX(-50%);top:130px;height:250px}
+.big{top:450px;font-size:96px;font-weight:800;line-height:1.05;letter-spacing:-2px}
+.big em{font-style:normal;color:var(--orange)}
+.sub{top:760px;font-size:36px;color:var(--soft)}
+.line{position:absolute;left:50%;top:705px;width:180px;margin-left:-90px;height:5px;border-radius:5px;background:linear-gradient(90deg,var(--blue),var(--orange))}
+.pills{position:absolute;left:0;right:0;top:860px;display:flex;justify-content:center;gap:16px}
+.pill{font-size:27px;padding:13px 26px;border-radius:40px;background:#ffffff16;border:1.5px solid #ffffff30}
+.pill b{color:var(--yellow)}
+/* panel izquierdo */
+.kick{position:absolute;left:96px;top:200px;font-size:24px;letter-spacing:4px;color:var(--orange);font-weight:700;text-transform:uppercase}
+#stepn{position:absolute;left:92px;top:236px;font-size:210px;font-weight:800;line-height:1;letter-spacing:-6px;color:var(--yellow);font-variant-numeric:tabular-nums}
+#stepn span{font-size:78px;letter-spacing:0;margin-left:12px;color:#fff;opacity:.9}
+#stept{position:absolute;left:96px;top:480px;width:640px;font-size:54px;font-weight:800;line-height:1.08;letter-spacing:-1px}
+#stept em{font-style:normal;color:var(--orange)}
+#stepd{position:absolute;left:98px;top:640px;width:600px;font-size:30px;line-height:1.35;color:var(--soft)}
+#tl{position:absolute;left:96px;top:800px;width:560px;height:130px}
+#tltrack{position:absolute;left:0;right:0;top:20px;height:8px;border-radius:8px;background:#ffffff22}
+#tlfill{position:absolute;left:0;top:0;height:8px;border-radius:8px;background:linear-gradient(90deg,var(--blue),var(--orange));width:0}
+.ms{position:absolute;top:0;width:150px;transform:translateX(-50%);text-align:center;font-size:21px;color:#7f93bb;font-weight:700;cursor:pointer}
+.ms i{display:block;margin:0 auto 14px;width:38px;height:38px;border-radius:50%;background:var(--navy8);border:4px solid #ffffff33}
+.ms.on{color:#fff}.ms.on i{background:var(--orange);border-color:var(--orange);box-shadow:0 0 0 8px #FF7A2B44}
+/* mapa */
+#mapf{position:absolute;left:800px;top:150px;width:1024px;height:810px;border-radius:28px;overflow:hidden;box-shadow:0 40px 90px #000a,0 0 0 2px #ffffff26;background:#08112b}
+#mapf svg{position:absolute;inset:0;width:100%;height:100%}
+#mapf svg text{font-family:-apple-system,"SF Pro Display","Helvetica Neue",Arial,sans-serif}
+#mtag{position:absolute;left:18px;bottom:18px;padding:10px 22px;border-radius:40px;background:#050A18e0;border:1.5px solid #ffffff33;font-size:22px;font-weight:700}
+#mtag i{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--orange);margin-right:10px}
+#disc{position:absolute;left:0;right:0;bottom:36px;text-align:center;font-size:20px;color:#7f93bb;opacity:0}
+/* controles */
+#ctl{display:flex;align-items:center;gap:14px;padding:10px max(16px,env(safe-area-inset-right,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));background:#0A1330;border-top:1px solid #ffffff22}
+#ctl button{width:44px;height:44px;border:0;border-radius:12px;background:var(--orange);color:#1a0a00;font-size:18px;font-weight:800;cursor:pointer;flex:none}
+#ctl button:focus-visible,#seek:focus-visible{outline:3px solid #fff;outline-offset:2px}
+#seek{flex:1;min-width:0;accent-color:var(--orange);height:28px}
+#tm{font-variant-numeric:tabular-nums;font-size:14px;color:var(--mute);font-weight:700;flex:none}
+</style></head><body>
+<div id="shell"><div id="fit"><div id="stage">
+<div id="bg"></div><div id="grid"></div><div id="vig"></div>
+
+<div id="hdr" class="abs">
+  <img id="hlogo" class="abs" src="assets/logo_dark_s.png" alt="NC Doing"><div id="hdiv" class="abs"></div>
+  <div id="hname" class="abs"><b>NC DOING</b>Nanotecnología aplicada a madera</div>
+  <div id="tag" class="abs">Cómo llegar al stand</div>
+</div>
+
+<div class="stage" id="intro">
+  <img class="lg" src="assets/logo_dark_s.png" alt="NC Doing">
+  <div class="center big">Cómo llegar a nuestro <em>stand</em></div>
+  <div class="line"></div>
+  <div class="center sub" style="top:740px">Edifica 2026 · Espacio Riesco, Huechuraba</div>
+  <div class="pills"><div class="pill"><b>20, 21 y 22</b> de octubre</div><div class="pill"><b>10:00 a 18:00</b> horas</div></div>
+</div>
+
+<div class="stage" id="route">
+  <div class="kick" id="kick">Paso 1 de 4</div>
+  <div id="stepn">1<span>/4</span></div>
+  <div id="stept"></div>
+  <div id="stepd"></div>
+  <div id="tl"><div id="tltrack"><div id="tlfill"></div></div></div>
+  <div id="mapf">
+    <svg id="svg" viewBox="0 0 1000 791" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Mapa de la ruta hasta el stand de NC Doing, Zona 2 del Pasillo ConTech">
+      <defs>
+        <linearGradient id="rg" x1="0" x2="1"><stop offset="0" stop-color="#2F7BFF"/><stop offset="1" stop-color="#FF7A2B"/></linearGradient>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="7"/></filter>
+        <pattern id="gp" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity=".05"/></pattern>
+      </defs>
+      <rect x="-400" y="-400" width="1800" height="1600" fill="#08112b"/>
+      <rect x="-400" y="-400" width="1800" height="1600" fill="url(#gp)"/>
+      <rect x="30" y="30" width="940" height="731" rx="26" fill="#0c1838" stroke="#ffffff" stroke-opacity=".22" stroke-width="3"/>
+      <!-- pabellones y stands atenuados -->
+      <g fill="#ffffff" fill-opacity=".05" stroke="#ffffff" stroke-opacity=".12">
+        <rect x="70" y="80" width="190" height="320" rx="12"/>
+        <rect x="70" y="580" width="0" height="0"/>
+        <rect x="360" y="130" width="120" height="70" rx="8"/><rect x="500" y="130" width="120" height="70" rx="8"/><rect x="640" y="130" width="120" height="70" rx="8"/><rect x="780" y="130" width="120" height="70" rx="8"/>
+        <rect x="360" y="230" width="120" height="70" rx="8"/><rect x="500" y="230" width="120" height="70" rx="8"/><rect x="640" y="230" width="120" height="70" rx="8"/><rect x="780" y="230" width="120" height="70" rx="8"/>
+        <rect x="360" y="610" width="120" height="70" rx="8"/><rect x="500" y="610" width="120" height="70" rx="8"/><rect x="640" y="610" width="120" height="70" rx="8"/><rect x="780" y="610" width="120" height="70" rx="8"/>
+      </g>
+      <!-- plaza -->
+      <rect x="330" y="90" width="610" height="620" rx="22" fill="#FF7A2B" fill-opacity=".05" stroke="#FF7A2B" stroke-width="2.5" stroke-dasharray="9 8"/>
+      <text x="355" y="118" font-size="23" font-weight="800" fill="#FF7A2B" letter-spacing="1">PLAZA DE LA CONSTRUCCIÓN DEL FUTURO</text>
+      <!-- pasillo ConTech -->
+      <rect x="340" y="400" width="590" height="190" rx="14" fill="#2F7BFF" fill-opacity=".10" stroke="#2F7BFF" stroke-opacity=".6" stroke-width="2"/>
+      <text x="360" y="386" font-size="21" font-weight="700" fill="#D6E1F7" letter-spacing="2">PASILLO CONTECH</text>
+      <g fill="none" stroke="#2F7BFF" stroke-opacity=".5" stroke-width="2"><path d="M537 400V590M733 400V590"/></g>
+      <rect id="z2" x="539" y="402" width="192" height="186" fill="#FF7A2B" fill-opacity=".14"/>
+      <g font-size="22" font-weight="800" fill="#D6E1F7" text-anchor="middle"><text x="438" y="428">Zona 1</text><text x="635" y="428" fill="#FFD54A">Zona 2</text><text x="831" y="428">Zona 3</text></g>
+      <!-- acceso y registro -->
+      <rect x="70" y="635" width="180" height="96" rx="14" fill="#2F7BFF" fill-opacity=".18" stroke="#2F7BFF" stroke-width="2"/>
+      <text x="86" y="676" font-size="21" font-weight="800" fill="#fff">ACCESO</text><text x="86" y="704" font-size="18" font-weight="600" fill="#D6E1F7">principal</text>
+      <rect x="70" y="445" width="180" height="100" rx="14" fill="#ffffff" fill-opacity=".07" stroke="#ffffff" stroke-opacity=".3" stroke-width="2"/>
+      <text x="86" y="502" font-size="19" font-weight="800" fill="#fff">REGISTRO</text>
+      <!-- ruta -->
+      <path id="base" d="M215 683 L215 495 L635 495" fill="none" stroke="#ffffff" stroke-opacity=".14" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+      <path id="glowp" d="M215 683 L215 495 L635 495" fill="none" stroke="#FF7A2B" stroke-opacity=".6" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" filter="url(#glow)"/>
+      <path id="trail" d="M215 683 L215 495 L635 495" fill="none" stroke="url(#rg)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="14 14"/>
+      <!-- pin del stand -->
+      <g id="pin" transform="translate(635 495)">
+        <circle class="ring" id="ring1" r="30" fill="none" stroke="#FF7A2B" stroke-width="4"/>
+        <circle class="ring" id="ring2" r="30" fill="none" stroke="#FF7A2B" stroke-width="4"/>
+        <g id="pinbody"><path d="M0 -62 c-27 0 -42 20 -42 40 c0 29 42 66 42 66 s42 -37 42 -66 c0 -20 -15 -40 -42 -40z" fill="#FF7A2B" stroke="#fff" stroke-width="4"/><circle cy="-22" r="14" fill="#fff"/></g>
+        <g id="card" opacity="0"><rect x="52" y="-128" width="300" height="86" rx="16" fill="#050A18" stroke="#FF7A2B" stroke-width="3"/><text x="72" y="-92" font-size="20" font-weight="700" fill="#FF7A2B" letter-spacing="2">NUESTRO STAND</text><text x="72" y="-60" font-size="30" font-weight="800" fill="#fff">NC Doing · Zona 2</text></g>
+      </g>
+      <g id="dot"><circle r="26" fill="#2F7BFF" fill-opacity=".35"/><circle r="13" fill="#fff" stroke="#2F7BFF" stroke-width="5"/></g>
+    </svg>
+    <div id="mtag"><i></i>Plano referencial</div>
+  </div>
+</div>
+
+<div class="stage" id="outro">
+  <img class="lg" src="assets/logo_dark_s.png" alt="NC Doing">
+  <div class="center big" style="font-size:84px">Te esperamos en la <em>Zona 2</em><br>del Pasillo ConTech</div>
+  <div class="center sub" style="top:760px">Plaza de la Construcción del Futuro · edifica.cl</div>
+  <div class="pills"><div class="pill"><b>20, 21 y 22</b> de octubre de 2026</div><div class="pill"><b>10:00 a 18:00</b> horas</div></div>
+</div>
+<div id="disc">Plano esquemático y referencial. Confirma la ubicación exacta en edifica.cl.</div>
+</div></div>
+
+<div id="ctl"><button id="pb" type="button" aria-label="Reproducir o pausar">❚❚</button><input id="seek" type="range" min="0" max="1000" value="0" aria-label="Línea de tiempo"><span id="tm">0:00 / 0:30</span></div>
+</div>
+
+<script>
+const TOTAL=30, FADE=.6, R0=4, RD=20, R1=R0+RD;
+const SEG=[["intro",0,R0+.2],["route",R0,R1+.4],["outro",R1,TOTAL]];
+const STEPS=[
+ ["Ingresa por el <em>acceso principal</em>","Entra al recinto de Espacio Riesco por el hall de ingreso."],
+ ["Pasa por el <em>registro</em>","Presenta tu entrada o acredítate en el módulo de registro."],
+ ["Sigue al <em>Pasillo ConTech</em>","Es el pasillo de soluciones tecnológicas, dentro de la Plaza de la Construcción del Futuro."],
+ ["Estás en la <em>Zona 2</em>","Aquí está el stand de NC Doing: nanotecnología para la protección y durabilidad de los materiales."]
+];
+const MSL=["Acceso","Registro","ConTech","Zona 2"];
+const MSF=[0,188/608,313/608,1];   // fracción de la ruta de cada hito
+const $=id=>document.getElementById(id);
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const outq=x=>1-Math.pow(1-x,3);
+const lerp=(a,b,t)=>a+(b-a)*t;
+const tl=$('tl');
+MSL.forEach((l,i)=>{const d=document.createElement('div');d.className='ms';d.id='ms'+i;d.style.left=(i/3*100)+'%';d.innerHTML='<i></i>'+l;d.onclick=()=>window.__goto&&window.__goto(R0+[.06,.30,.62,.93][i]*RD);tl.appendChild(d)});
+// tiempo local (0..1 en la escena de ruta) -> fracción recorrida
+const KF=[[0,0],[.06,0],[.28,MSF[1]],[.36,MSF[1]],[.66,MSF[2]],[.72,MSF[2]],[.92,1],[1,1]];
+function frac(u){for(let i=0;i<KF.length-1;i++){const[a,fa]=KF[i],[b,fb]=KF[i+1];if(u<=b)return b===a?fb:lerp(fa,fb,ease(clamp((u-a)/(b-a))))}return 1}
+const path=$('base'),L=path.getTotalLength();
+$('trail').style.strokeDasharray='14 14';
+const svg=$('svg');
+let lastStep=-1;
+function setStep(i){if(i===lastStep)return;lastStep=i;$('kick').textContent='Paso '+(i+1)+' de 4';$('stepn').innerHTML=(i+1)+'<span>/4</span>';$('stept').innerHTML=STEPS[i][0];$('stepd').textContent=STEPS[i][1];}
+window.__seek=function(t){
+  SEG.forEach(([id,a,b],i)=>{const el=$(id);const fi=i==0?1:clamp((t-a)/FADE),fo=i==SEG.length-1?1:clamp((b-t)/FADE);
+    el.style.opacity=ease(fi)*ease(fo);
+    if(id!=='route'&&t>=a-.01&&t<=b+.01){[...el.children].forEach((c,k)=>{if(c.classList.contains('lg')||c.classList.contains('line'))return;const q=outq(clamp((t-a-.1-k*.1)/.7));c.style.opacity=q;c.style.translate='0 '+((1-q)*26)+'px'})}});
+  const hv=ease(clamp((t-R0+.2)/FADE))*ease(clamp((R1+.3-t)/FADE));
+  $('hdr').style.opacity=hv; $('disc').style.opacity=ease(clamp((t-R1-.6)/.8))*.9;
+  $('bg').style.transform='translate('+Math.sin(t/9)*28+'px,'+Math.cos(t/11)*20+'px)';
+  const u=clamp((t-R0)/RD), f=frac(u);
+  const pt=path.getPointAtLength(L*f);
+  $('dot').setAttribute('transform','translate('+pt.x+' '+pt.y+')'); $('dot').setAttribute('opacity',1-ease(clamp((f-.96)/.04)));
+  const tr=$('trail'); tr.style.strokeDasharray=''; tr.setAttribute('stroke-dasharray',(L*f)+' '+L); tr.setAttribute('stroke-dashoffset',0);
+  // cámara
+  const k=ease(clamp(u/.08));
+  let w=lerp(1000,780,k); w=lerp(w,660,ease(clamp((u-.88)/.12)));
+  const h=w*0.791;
+  let cx=lerp(500,pt.x,k), cy=lerp(395,pt.y,k);
+  if(f>=.99) {cx=lerp(cx,pt.x+70,ease(clamp((u-.9)/.1))); cy=lerp(cy,pt.y-40,ease(clamp((u-.9)/.1)));}
+  cx=clamp(cx,w/2-60,1060-w/2); cy=clamp(cy,h/2-60,851-h/2);
+  svg.setAttribute('viewBox',(cx-w/2)+' '+(cy-h/2)+' '+w+' '+h);
+  // pasos
+  let st=0; MSF.forEach((m,i)=>{if(f>=m-.005&&u>.05)st=i}); if(u<=.05)st=0;
+  setStep(st);
+  $('tlfill').style.width=(f*100)+'%';
+  MSF.forEach((m,i)=>$('ms'+i).classList.toggle('on',f>=m-.005&&(i>0||u>.02)));
+  // pin y tarjeta
+  const arr=ease(clamp((u-.84)/.1));
+  $('card').setAttribute('opacity',arr); $('card').setAttribute('transform','translate(0 '+((1-arr)*14)+')');
+  ['ring1','ring2'].forEach((id,i)=>{const ph=((t*0.6)+i*.5)%1;const r=$(id);r.setAttribute('r',30+ph*70);r.setAttribute('stroke-opacity',(1-ph)*.7*(u>.5?1:.4))});
+  $('pinbody').setAttribute('transform','translate(0 '+(-Math.abs(Math.sin(t*3))*6*ease(clamp((u-.86)/.1)))+')');
+  $('z2').setAttribute('fill-opacity',.14+.14*(.5+.5*Math.sin(t*3))*ease(clamp((u-.6)/.2)));
+};
+
+/* ---- reproductor interactivo (no se usa al renderizar el video) ---- */
+const RENDER=/[?&]render/.test(location.search);
+if(RENDER){document.body.classList.add('render');}
+else{
+  let cur=0, playing=true, last=performance.now();
+  const fit=$('fit'),stage=$('stage');
+  function resize(){const s=Math.min(fit.clientWidth/1920,fit.clientHeight/1080);stage.style.transform='scale('+s+')';stage.style.left=((fit.clientWidth-1920*s)/2)+'px';stage.style.top=((fit.clientHeight-1080*s)/2)+'px'}
+  addEventListener('resize',resize);resize();
+  const fmt=s=>Math.floor(s/60)+':'+String(Math.floor(s%60)).padStart(2,'0');
+  function upd(){window.__seek(cur);$('seek').value=Math.round(cur/TOTAL*1000);$('tm').textContent=fmt(cur)+' / '+fmt(TOTAL);$('pb').textContent=playing?'❚❚':(cur>=TOTAL?'↺':'▶')}
+  window.__goto=t=>{cur=clamp(t,0,TOTAL);playing=false;upd()};
+  $('pb').onclick=()=>{if(cur>=TOTAL)cur=0;playing=!playing;last=performance.now();upd()};
+  stage.onclick=e=>{if(e.target.closest('.ms'))return;$('pb').onclick()};
+  $('seek').oninput=e=>{cur=e.target.value/1000*TOTAL;playing=false;upd()};
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){cur=R1-2;playing=false}
+  (function loop(n){if(playing){cur+=(n-last)/1000;if(cur>=TOTAL){cur=TOTAL;playing=false}upd()}last=n;requestAnimationFrame(loop)})(performance.now());
+  upd();
+}
+if(RENDER)window.__seek(0);
+</script></body></html>

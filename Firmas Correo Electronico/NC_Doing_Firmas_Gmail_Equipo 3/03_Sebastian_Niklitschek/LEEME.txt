@@ -1,0 +1,24 @@
+NC DOING | FIRMA DE CORREO PARA GMAIL
+
+Nombre: Sebastián Niklitschek
+Cargo: Gerente General
+Teléfono: +56 9 6420 8470
+Dirección: Ejército 315, Concepción
+
+ARCHIVOS DE ESTA CARPETA
+01_Firma_Sebastian_Niklitschek_Gmail.html : firma HTML lista para copiar desde el navegador.
+02_Manual_Instalacion_Gmail.pdf : instrucciones individuales paso a paso.
+03_Vista_Previa.png : imagen de referencia, no usar como firma.
+Recursos/ : logo e íconos PNG por separado, por si Gmail no los mantiene al pegar.
+
+INSTALACIÓN RÁPIDA
+1. Abrir el HTML en Chrome.
+2. Seleccionar y copiar la firma visual completa (no el código fuente).
+3. Gmail > Configuración > Ver todos los ajustes > General > Firma > Crear nueva.
+4. Pegar la firma, establecerla como predeterminada y guardar cambios.
+5. Enviar un correo de prueba y revisar logo, alineación y cuatro enlaces.
+
+NOTA DE CONTENIDO
+Se respeta el diseño aprobado para Javiera: nombre, cargo, teléfono, LinkedIn corporativo, sitio web y dirección. No se incorpora una fila de correo electrónico.
+Las tarjetas del equipo se usaron como fuente para los cargos, teléfonos y la dirección.
+Montserrat puede ser sustituida por Arial/Helvetica en algunos clientes de correo.

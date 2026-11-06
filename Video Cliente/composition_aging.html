@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>NC DOING · Proceso de envejecimiento</title>
+<style>
+:root{--navy9:#050A18;--navy8:#0A1330;--blue:#2F7BFF;--orange:#FF7A2B;--yellow:#FFD54A;--soft:#D6E1F7;--mute:#93A6C9}
+*{box-sizing:border-box;margin:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--navy9);font-family:-apple-system,"SF Pro Display","Helvetica Neue",Arial,sans-serif;color:#fff}
+.abs{position:absolute}
+#bg{position:absolute;inset:-100px;background:radial-gradient(1100px 700px at 82% 12%,#17367c 0%,transparent 62%),radial-gradient(900px 600px at 4% 104%,#10285c 0%,transparent 62%),linear-gradient(160deg,var(--navy8),var(--navy9))}
+#grid{position:absolute;inset:0;opacity:.06;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:64px 64px}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 55%,#0008 100%)}
+#hdr{inset:0;opacity:0}
+#hlogo{left:96px;top:52px;height:76px}
+#hdiv{left:206px;top:60px;width:2px;height:60px;background:#ffffff33}
+#hname{left:230px;top:62px;font-size:25px;line-height:1.3;color:var(--soft)}
+#hname b{display:block;font-size:30px;color:#fff;letter-spacing:.5px}
+#tag{right:96px;top:68px;font-size:20px;letter-spacing:3.5px;color:var(--soft);text-transform:uppercase;border:1.5px solid #ffffff3a;padding:11px 22px;border-radius:40px}
+.stage{position:absolute;inset:0;opacity:0}
+.center{position:absolute;left:0;right:0;text-align:center}
+.lg{position:absolute;left:50%;transform:translateX(-50%);top:150px;height:250px}
+.big{top:470px;font-size:100px;font-weight:800;line-height:1.04;letter-spacing:-2px}
+.big em{font-style:normal;color:var(--orange)}
+.sub{top:770px;font-size:36px;color:var(--soft)}
+.line{position:absolute;left:50%;top:725px;width:180px;margin-left:-90px;height:5px;border-radius:5px;background:linear-gradient(90deg,var(--blue),var(--orange))}
+/* process */
+.kick{position:absolute;left:96px;top:200px;font-size:24px;letter-spacing:4px;color:var(--orange);font-weight:700;text-transform:uppercase}
+#hrs{position:absolute;left:92px;top:238px;font-size:250px;font-weight:800;line-height:1;letter-spacing:-6px;color:var(--yellow);font-variant-numeric:tabular-nums}
+#hrs span{font-size:110px;letter-spacing:0;margin-left:14px;color:#fff}
+.hl{position:absolute;left:100px;top:508px;font-size:38px;color:var(--soft)}
+#tl{position:absolute;left:96px;top:640px;width:760px;height:150px}
+#tltrack{position:absolute;left:0;right:0;top:20px;height:8px;border-radius:8px;background:#ffffff22}
+#tlfill{position:absolute;left:0;top:0;height:8px;border-radius:8px;background:linear-gradient(90deg,var(--blue),var(--orange));width:0}
+.ms{position:absolute;top:0;width:100px;transform:translateX(-50%);text-align:center;font-size:25px;color:#7f93bb;font-weight:700}
+.ms i{display:block;margin:0 auto 14px;width:38px;height:38px;border-radius:50%;background:var(--navy8);border:4px solid #ffffff33}
+.ms.on{color:#fff}.ms.on i{background:var(--orange);border-color:var(--orange);box-shadow:0 0 0 8px #FF7A2B44}
+.chips{position:absolute;left:96px;top:850px;display:flex;gap:14px}
+.chip{font-size:25px;padding:13px 24px;border-radius:40px;background:#ffffff16;border:1.5px solid #ffffff30}
+.chip i{display:inline-block;width:13px;height:13px;border-radius:50%;margin-right:11px;vertical-align:1px}
+.vf{position:absolute;left:1010px;top:150px;width:720px;height:727px;border-radius:28px;overflow:hidden;box-shadow:0 40px 90px #000a,0 0 0 2px #ffffff26;background:#000;container-type:inline-size}
+.vwrap{position:absolute;left:0;top:-120px;width:100%;height:133.333%}
+.vwrap img{position:absolute;inset:0;width:100%;height:100%}
+.stk{position:absolute;transform:translate(-50%,-50%) rotate(-2deg);width:15.4%;height:8.4%;border-radius:1.3cqw;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-weight:800;line-height:1.05;text-align:center;font-size:3.35cqw;box-shadow:0 .6cqw 1.6cqw #0007}
+.stk small{font-size:1.9cqw;font-weight:700;letter-spacing:.25cqw;opacity:.9}
+.stk.sin{left:30.57%;top:26.45%;background:linear-gradient(160deg,#3b84ff,#1b55c9)}
+.stk.con{left:75.52%;top:24.93%;background:linear-gradient(160deg,#ff8a3d,#e5601a);transform:translate(-50%,-50%) rotate(-1.6deg)}
+#vtag{position:absolute;left:18px;bottom:18px;padding:10px 22px;border-radius:40px;background:#050A18e0;border:1.5px solid #ffffff33;font-size:24px;font-weight:700}
+#disc{position:absolute;left:0;right:0;bottom:36px;text-align:center;font-size:20px;color:#7f93bb;opacity:0}
+#toast{position:absolute;left:1010px;width:720px;top:900px;text-align:center;font-size:30px;font-weight:700;color:var(--yellow);opacity:0}
+</style></head><body>
+<div id="bg"></div><div id="grid"></div><div id="vig"></div>
+<div id="hdr" class="abs">
+  <img id="hlogo" class="abs" src="assets/logo_dark.png"><div id="hdiv" class="abs"></div>
+  <div id="hname" class="abs"><b>NC DOING</b>Nanotecnología aplicada a madera</div>
+  <div id="tag" class="abs">Proceso de envejecimiento</div>
+</div>
+
+<div class="stage" id="intro">
+  <img class="lg" src="assets/logo_dark.png">
+  <div class="center big">Proceso de <em>envejecimiento UV</em></div>
+  <div class="line"></div>
+  <div class="center sub">Madera con y sin nanopartículas · ensayo acelerado de 0 a 200 horas</div>
+</div>
+
+<div class="stage" id="proc">
+  <div class="kick">Exposición UV acelerada</div>
+  <div id="hrs">0<span>h</span></div>
+  <div class="hl">de exposición acumulada</div>
+  <div id="tl"><div id="tltrack"><div id="tlfill"></div></div></div>
+  <div class="chips"><div class="chip"><i style="background:#9FB0D0"></i>Izquierda · Sin NPs</div><div class="chip"><i style="background:var(--orange)"></i>Derecha · Con NPs</div></div>
+  <div class="vf" id="vf"><div class="vwrap" id="vwrap">
+    <img id="vA" src="assets/frames/f001.jpg"><img id="vB" src="assets/frames/f002.jpg">
+    <div class="stk sin"><small>SIN</small>NPs</div><div class="stk con"><small>CON</small>NPs</div>
+  </div></div>
+</div>
+
+<div class="stage" id="outro">
+  <img class="lg" src="assets/logo_dark.png">
+  <div class="center big" style="font-size:84px">Resultado tras <em>200 horas</em><br>de exposición UV</div>
+  <div class="center sub" style="top:760px">Comparación visual en ensayo acelerado</div>
+</div>
+<div id="disc">Simulación ilustrativa. Resultados sujetos a las condiciones del ensayo.</div>
+
+<script>
+const TOTAL=30, FADE=.6, P0=3.2, PD=22.5, P1=P0+PD;   // proceso entre P0 y P1
+const SEG=[["intro",0,P0+.2],["proc",P0,P1+.4],["outro",P1,TOTAL]];
+// horas mostradas por el propio video, muestreadas cada 15 cuadros
+const HS=[0,0,0,8,38,50,50,70,97,100,104,132,150,150,164,193,200,200,200,200,200];
+const MS=[0,50,100,150,200];
+const tl=document.getElementById('tl');
+MS.forEach(h=>{const d=document.createElement('div');d.className='ms';d.id='ms'+h;d.style.left=(h/200*100)+'%';d.innerHTML=`<i></i>${h} h`;tl.appendChild(d)});
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const outq=x=>1-Math.pow(1-x,3);
+const $=id=>document.getElementById(id);
+function hoursAt(n){const k=n/15,i=Math.floor(k),f=k-i;return HS[i]+(HS[Math.min(i+1,HS.length-1)]-HS[i])*f}
+function stagger(el,t,a){[...el.children].forEach((c,i)=>{const k=outq(clamp((t-a-.1-i*.08)/.7));c.style.opacity=k;c.style.translate=`0 ${(1-k)*28}px`})}
+const pad=n=>'assets/frames/f'+String(Math.max(1,Math.min(300,n))).padStart(3,'0')+'.jpg';
+window.__seek=function(t){
+  SEG.forEach(([id,a,b],i)=>{const el=$(id);const fi=i==0?1:clamp((t-a)/FADE),fo=i==SEG.length-1?1:clamp((b-t)/FADE);
+    el.style.opacity=ease(fi)*ease(fo); if(t>=a-.01&&t<=b+.01) stagger(el,t,a)});
+  const hv=ease(clamp((t-P0+.2)/FADE))*ease(clamp((P1+.3-t)/FADE));
+  $('hdr').style.opacity=hv; $('disc').style.opacity=ease(clamp((t-P1-.6)/.8));
+  $('bg').style.transform=`translate(${Math.sin(t/9)*28}px,${Math.cos(t/11)*20}px)`;
+  // video remap (lento, con mezcla entre cuadros)
+  const p=clamp((t-P0-.6)/(PD-1.4)); const pos=p*299;        // 0..299
+  const i=Math.floor(pos), f=pos-i;
+  $('vA').src=pad(i+1); $('vB').src=pad(i+2); $('vB').style.opacity=f;
+  $('vf').style.transform=`scale(${1+.03*p})`;
+  const h=hoursAt(pos);
+  $('hrs').innerHTML=Math.round(h)+'<span>h</span>';
+  $('tlfill').style.width=(h/200*100)+'%';
+  MS.forEach(m=>$('ms'+m).classList.toggle('on',h>=m-.5));
+};
+window.__seek(0);
+</script></body></html>

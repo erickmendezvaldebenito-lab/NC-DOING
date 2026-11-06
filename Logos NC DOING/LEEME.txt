@@ -1,0 +1,26 @@
+LOGOS NC DOING
+==============
+Carpetas
+  SVG/  Vectoriales editables (Illustrator, Figma, Canva, web).
+  PDF/  Vectoriales para imprenta (pendones, tarjetas, gráfica).
+  PNG/  512 / 1024 / 2048 / 4096 px de ancho. Fondo transparente (los 09-12 llevan fondo sólido).
+
+Qué usar y cuándo
+  01 Logo color, fondo claro      Documentos, web, firmas de correo, presentaciones con fondo blanco.
+  02 Logo color, fondo oscuro     Pendón, pantallas, video, presentaciones con fondo oscuro/azul/negro.
+  03 Monocromo negro              Impresión 1 tinta, sellos, grabado, fotocopia, marca de agua.
+  04 Monocromo blanco             Sobre fotos o fondos de color, grabado láser, vinilos.
+  05-08 Isotipo NC (sin DOING)    Espacios pequeños: favicon, íconos, stickers, esquina de slides.
+                                  Mismas 4 variantes que el logo (color claro/oscuro, negro, blanco).
+  09-12 Avatar redes sociales     Cuadrados con fondo (azul oscuro #131922 o blanco) para
+                                  LinkedIn, Instagram, WhatsApp Business. 09/10 logo completo, 11/12 solo NC.
+
+Colores
+  Azul oscuro  #131922
+  Esfera naranja  degradé #FC5F03 -> #FADA88
+  Esfera azul     degradé #2113DA -> #0CB0E3
+
+Origen
+  Medido sobre el pendón NC_Doing_Pendon_100x200cm_.pdf y redibujado con geometría exacta
+  (rectas, arcos concéntricos y esquinas redondeadas), sin las ondulaciones del autotrazado.
+  Coincide con el original dentro de ~1 pt sobre un logo de ~730 pt de ancho.

@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>NC DOING · Ensayo UV v2</title>
+<style>
+:root{--navy9:#050A18;--navy8:#0A1330;--blue:#2F7BFF;--orange:#FF7A2B;--yellow:#FFD54A;--ink:#fff;--soft:#D6E1F7;--mute:#93A6C9}
+*{box-sizing:border-box;margin:0}
+html,body{width:1920px;height:1080px;overflow:hidden;background:var(--navy9);font-family:-apple-system,"SF Pro Display","Helvetica Neue",Arial,sans-serif;color:var(--ink)}
+.abs{position:absolute}
+#bg{position:absolute;inset:-100px;background:radial-gradient(1100px 700px at 82% 12%,#17367c 0%,transparent 62%),radial-gradient(900px 600px at 4% 104%,#10285c 0%,transparent 62%),linear-gradient(160deg,var(--navy8),var(--navy9))}
+#grid{position:absolute;inset:0;opacity:.06;background-image:linear-gradient(#fff 1px,transparent 1px),linear-gradient(90deg,#fff 1px,transparent 1px);background-size:64px 64px}
+#vig{position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 55%,#0008 100%)}
+/* header */
+#hdr{inset:0;opacity:0}
+#hlogo{left:96px;top:52px;height:76px}
+#hdiv{left:206px;top:60px;width:2px;height:60px;background:#ffffff33}
+#hname{left:230px;top:62px;font-size:25px;line-height:1.3;color:var(--soft)}
+#hname b{display:block;font-size:30px;color:#fff;letter-spacing:.5px}
+#tag{right:96px;top:68px;font-size:20px;letter-spacing:3.5px;color:var(--soft);text-transform:uppercase;border:1.5px solid #ffffff3a;padding:11px 22px;border-radius:40px}
+/* stage common */
+.stage{position:absolute;inset:0;opacity:0}
+.num{position:absolute;left:96px;top:210px;font-size:140px;font-weight:800;line-height:1;color:transparent;-webkit-text-stroke:3px var(--blue)}
+.kick{position:absolute;left:96px;top:370px;font-size:24px;letter-spacing:4px;color:var(--orange);text-transform:uppercase;font-weight:700}
+.ttl{position:absolute;left:96px;top:410px;width:820px;font-size:78px;font-weight:800;line-height:1.04;letter-spacing:-1px}
+.ttl em{font-style:normal;color:var(--orange)}
+.dsc{position:absolute;left:96px;top:640px;width:780px;font-size:34px;line-height:1.42;color:var(--soft)}
+.chips{position:absolute;left:96px;top:830px;display:flex;gap:14px;flex-wrap:wrap;width:820px}
+.chip{font-size:25px;padding:13px 24px;border-radius:40px;background:#ffffff16;border:1.5px solid #ffffff30;color:#fff}
+.chip i{display:inline-block;width:13px;height:13px;border-radius:50%;margin-right:11px;vertical-align:1px}
+.frame{position:absolute;border-radius:28px;overflow:hidden;box-shadow:0 40px 90px #000a,0 0 0 2px #ffffff26;background:#000}
+.frame>img{width:100%;height:100%;object-fit:cover;display:block}
+.cap{position:absolute;left:18px;bottom:18px;max-width:calc(100% - 36px);padding:10px 22px;border-radius:40px;background:#050A18e0;border:1.5px solid #ffffff33;font-size:24px;font-weight:700;line-height:1.2;white-space:nowrap}
+.pin{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:10px;background:#050A18d9;border:2px solid var(--orange);color:#fff;font-size:26px;font-weight:700;padding:9px 20px;border-radius:40px;white-space:nowrap}
+.pin.b{border-color:var(--blue)}
+.pin::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--orange)}
+.pin.b::before{background:var(--blue)}
+/* sticker covers: positioned in % of a 960x1280 image */
+.frame{container-type:inline-size}
+.stk{position:absolute;transform:translate(-50%,-50%) rotate(-2deg);width:15.4%;height:8.4%;border-radius:1.3cqw;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-weight:800;line-height:1.05;text-align:center;font-size:3.35cqw;letter-spacing:.2px;box-shadow:0 .6cqw 1.6cqw #0007}
+.stk small{font-size:1.9cqw;font-weight:700;letter-spacing:.25cqw;opacity:.9}
+.stk.sin{left:30.57%;top:26.45%;background:linear-gradient(160deg,#3b84ff,#1b55c9)}
+.stk.con{left:75.52%;top:24.93%;background:linear-gradient(160deg,#ff8a3d,#e5601a);transform:translate(-50%,-50%) rotate(-1.6deg)}
+.kbw{position:absolute;inset:0}
+/* stepper */
+#stepper{left:96px;right:96px;bottom:46px;height:84px;opacity:0}
+#track{position:absolute;left:0;right:0;top:15px;height:5px;background:#ffffff22;border-radius:4px}
+#fill{position:absolute;left:0;top:0;height:5px;background:linear-gradient(90deg,var(--blue),var(--orange));border-radius:4px;width:0}
+.step{position:absolute;top:0;width:280px;transform:translateX(-50%);text-align:center;font-size:23px;color:#7f93bb;font-weight:600}
+.step i{display:block;margin:0 auto 12px;width:36px;height:36px;border-radius:50%;background:var(--navy8);border:3px solid #ffffff33;font-style:normal;line-height:30px;font-size:19px;font-weight:700}
+.step.on{color:#fff}.step.on i{background:var(--blue);border-color:var(--blue)}
+.step.cur i{box-shadow:0 0 0 9px #2F7BFF44}
+/* intro/outro */
+.center{position:absolute;left:0;right:0;text-align:center}
+#intro .lg,#outro .lg{position:absolute;left:50%;transform:translateX(-50%);top:150px;height:250px}
+#intro .big{top:470px;font-size:104px;font-weight:800;line-height:1.04;letter-spacing:-2px}
+#intro .big em,#outro .big em,#ctx .big em{font-style:normal;color:var(--orange)}
+#intro .sub{top:750px;font-size:36px;color:var(--soft)}
+#intro .line{position:absolute;left:50%;top:710px;width:180px;margin-left:-90px;height:5px;border-radius:5px;background:linear-gradient(90deg,var(--blue),var(--orange))}
+/* context */
+#ctx .big{top:210px;font-size:84px;font-weight:800;line-height:1.05;letter-spacing:-1.5px}
+.cards{position:absolute;left:96px;right:96px;top:430px;display:flex;gap:36px}
+.card{flex:1;background:#ffffff0f;border:1.5px solid #ffffff2a;border-radius:28px;padding:44px 40px 40px;height:440px}
+.card .ic{width:84px;height:84px;border-radius:24px;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:800;margin-bottom:40px}
+.card b{display:block;font-size:42px;line-height:1.1;margin-bottom:16px}
+.card span{display:block;font-size:30px;line-height:1.45;color:var(--soft)}
+/* compare */
+#cmpwrap{container-type:inline-size;left:690px;top:185px;width:540px;height:720px;border-radius:28px;overflow:hidden;box-shadow:0 40px 90px #000a,0 0 0 2px #ffffff26}
+.cm{position:absolute;inset:0;background-size:cover}
+#cmpA,#cmpB{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+#cmpB{clip-path:inset(0 50% 0 0)}
+#knob{position:absolute;top:0;bottom:0;width:4px;background:#fff;margin-left:-2px;box-shadow:0 0 24px #fff8}
+#knob::after{content:"⇄";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:70px;height:70px;border-radius:50%;background:#fff;color:#0A1330;font-size:36px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.tagb{position:absolute;top:26px;padding:10px 24px;border-radius:40px;font-size:30px;font-weight:800;background:#050A18e6;border:2px solid var(--yellow);color:var(--yellow)}
+.lbl{position:absolute;bottom:24px;font-size:28px;font-weight:700;padding:10px 22px;border-radius:14px;background:#050A18e6;border:2px solid #fff3}
+#cmptitle{display:none}
+.side{position:absolute;top:360px;width:520px}
+.side small{display:block;font-size:24px;letter-spacing:4px;color:var(--orange);font-weight:700;margin-bottom:14px}
+.side b{display:block;font-size:84px;line-height:1;color:var(--yellow);font-weight:800;margin-bottom:18px}
+.side span{font-size:30px;line-height:1.4;color:var(--soft)}
+/* outro */
+#outro .big{top:470px;font-size:84px;font-weight:800;line-height:1.08;letter-spacing:-1.5px}
+#outro .sub{top:760px;font-size:32px;color:var(--soft)}
+#disc{position:absolute;left:0;right:0;bottom:36px;text-align:center;font-size:20px;color:#7f93bb;opacity:0}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+</style></head><body>
+<div id="bg"></div><div id="grid"></div><div id="vig"></div>
+
+<div id="hdr" class="abs">
+  <img id="hlogo" class="abs" src="assets/logo_dark.png">
+  <div id="hdiv" class="abs"></div>
+  <div id="hname" class="abs"><b>NC DOING</b>Nanotecnología aplicada a madera</div>
+  <div id="tag" class="abs">Ensayo UV acelerado</div>
+</div>
+
+<div class="stage" id="intro">
+  <img class="lg" src="assets/logo_dark.png">
+  <div class="center big">Así probamos<br>la <em>protección UV</em></div>
+  <div class="line"></div>
+  <div class="center sub">Ensayo de envejecimiento acelerado en madera</div>
+</div>
+
+<div class="stage" id="ctx">
+  <div class="center big">¿Qué evalúa <em>este ensayo</em>?</div>
+  <div class="cards">
+    <div class="card"><div class="ic" style="background:#2F7BFF33;color:#7fb0ff">1</div><b>Dos muestras<br>comparables</b><span>Madera de iguales características: una sin tratar y otra con nanopartículas.</span></div>
+    <div class="card"><div class="ic" style="background:#FF7A2B33;color:#ffa268">2</div><b>Radiación UV<br>acelerada</b><span>Una cámara de laboratorio reproduce en horas la exposición solar.</span></div>
+    <div class="card"><div class="ic" style="background:#FFD54A33;color:#FFD54A">3</div><b>Comparación<br>visual</b><span>Se observa el cambio de color de cada muestra a medida que pasan las horas.</span></div>
+  </div>
+</div>
+
+<div class="stage" id="s1">
+  <div class="num">01</div><div class="kick">Etapa</div>
+  <div class="ttl">Preparación<br>de <em>muestras</em></div>
+  <div class="dsc">Dos bloques de madera de las mismas características: uno sin tratamiento y otro tratado con nanopartículas NC DOING.</div>
+  <div class="chips"><div class="chip"><i style="background:#9FB0D0"></i>Sin NPs</div><div class="chip"><i style="background:var(--orange)"></i>Con NPs</div></div>
+  <div class="frame" style="left:1060px;top:165px;width:570px;height:760px"><div class="kbw" data-kb><img src="assets/muestras.jpg" style="width:100%;height:100%;object-fit:cover"><div class="stk sin"><small>SIN</small>NPs</div><div class="stk con"><small>CON</small>NPs</div></div></div>
+</div>
+
+<div class="stage" id="s2">
+  <div class="num">02</div><div class="kick">Etapa</div>
+  <div class="ttl">Equipo de<br><em>ensayo UV</em></div>
+  <div class="dsc">Cámara de envejecimiento acelerado (Accelerated Weathering Tester) con controlador digital de ciclo y temperatura.</div>
+  <div class="chips"><div class="chip"><i style="background:var(--blue)"></i>Radiación UV</div><div class="chip"><i style="background:var(--orange)"></i>Ciclo controlado</div></div>
+  <div class="frame" style="left:930px;top:215px;width:437px;height:583px"><img data-kb src="assets/camara.jpg"><div class="cap">Cámara UV</div></div>
+  <div class="frame" style="left:1397px;top:215px;width:437px;height:583px"><img data-kb src="assets/panel.jpg"><div class="cap">Controlador</div></div>
+</div>
+
+<div class="stage" id="s3">
+  <div class="num">03</div><div class="kick">Etapa</div>
+  <div class="ttl">Carga en<br><em>la cámara</em></div>
+  <div class="dsc">Ambas muestras se ubican lado a lado sobre la bandeja, con la misma exposición a la radiación.</div>
+  <div class="chips"><div class="chip"><i style="background:var(--blue)"></i>Mismas condiciones</div></div>
+  <div class="frame" style="left:960px;top:230px;width:780px;height:585px"><img data-kb src="assets/carga.jpg"><div class="cap">Muestras dentro de la cámara UV</div></div>
+</div>
+
+<div class="stage" id="s4">
+  <div class="num">04</div><div class="kick">Etapa</div>
+  <div class="ttl">Exposición<br>y <em>resultado</em></div>
+  <div class="dsc">Se compara el color de la madera a medida que aumentan las horas de exposición UV.</div>
+  <div class="chips"><div class="chip"><i style="background:#9FB0D0"></i>Izquierda · Sin NPs</div><div class="chip"><i style="background:var(--orange)"></i>Derecha · Con NPs</div></div>
+  <div class="frame" style="left:1085px;top:172px;width:560px;height:746px"><img id="vid" src="assets/frames/f001.jpg"><div class="stk sin"><small>SIN</small>NPs</div><div class="stk con"><small>CON</small>NPs</div></div>
+</div>
+
+<div class="stage" id="s5">
+  <div class="side" style="left:96px"><small>FINAL DEL ENSAYO</small><b>200 h</b><span>Estado de ambas muestras tras la exposición UV acelerada.</span></div>
+  <div id="cmpwrap" class="abs">
+    <img id="cmpA" src="assets/frames/f001.jpg"><img id="cmpB" src="assets/frames/f300.jpg">
+    <div id="knob"></div>
+    <div class="stk sin"><small>SIN</small>NPs</div><div class="stk con"><small>CON</small>NPs</div>
+  </div>
+  <div class="side" style="left:1296px"><small>INICIO DEL ENSAYO</small><b>0 h</b><span>Punto de partida: ambas muestras sin exposición UV.</span></div>
+  <div id="cmptitle" class="abs"></div>
+</div>
+
+<div class="stage" id="outro">
+  <img class="lg" src="assets/logo_dark.png">
+  <div class="center big">Menos cambio de color<br>con <em>nanopartículas NC DOING</em></div>
+  <div class="center sub">Comparación visual en ensayo UV acelerado</div>
+</div>
+
+<div id="stepper" class="abs"><div id="track"><div id="fill"></div></div></div>
+<div id="disc">Simulación ilustrativa. Resultados sujetos a las condiciones del ensayo.</div>
+<div id="flash"></div>
+
+<script>
+const TOTAL=62, FADE=.6;
+// [id, start, end]
+const SEG=[["intro",0,5],["ctx",5,10],["s1",10,19],["s2",19,28],["s3",28,34],["s4",34,50],["s5",50,57],["outro",57,TOTAL]];
+const STAGES=[["Muestras",10,19],["Equipo",19,28],["Carga",28,34],["Resultado",34,57]];
+const VID_START=35.5;
+const st=document.getElementById('stepper');
+STAGES.forEach((s,i)=>{const d=document.createElement('div');d.className='step';d.id='st'+i;d.style.left=((i+.5)/STAGES.length*100)+'%';d.innerHTML=`<i>${i+1}</i>${s[0]}`;st.appendChild(d)});
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const ease=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const outq=x=>1-Math.pow(1-x,3);
+const $=id=>document.getElementById(id);
+function place(el,t,a,b,first,last){
+  const fi=first?1:clamp((t-a)/FADE), fo=last?1:clamp((b-t)/FADE);
+  el.style.opacity=ease(fi)*ease(fo);
+  const k=outq(fi), k2=1-outq(fo);
+  el.style.transform=`translateY(${(1-k)*30 - (k2)*0}px) scale(${1-(1-fo)*.02})`;
+}
+// stagger inner children for entrance
+function stagger(el,t,a){
+  const kids=[...el.children]; kids.forEach((c,i)=>{
+    if(c.classList.contains('frame')||c.classList.contains('lg')||c.classList.contains('cards')||c.id=='cmpwrap'||c.id=='cmptitle'){
+      const k=outq(clamp((t-a-.15-i*.07)/.7)); c.style.opacity=k; c.style.translate=`0 ${(1-k)*34}px`;
+    }else{
+      const k=outq(clamp((t-a-.05-i*.09)/.6)); c.style.opacity=k; c.style.translate=`0 ${(1-k)*26}px`;
+    }
+  });
+}
+window.__seek=function(t){
+  SEG.forEach(([id,a,b],i)=>{
+    const el=$(id); const first=i==0, last=i==SEG.length-1;
+    const fi=first?1:clamp((t-a)/FADE), fo=last?1:clamp((b-t)/FADE);
+    el.style.opacity=ease(fi)*ease(fo);
+    if(t>=a-.01&&t<=b+.01) stagger(el,t,a);
+  });
+  // header + stepper only during numbered stages + compare
+  const hv=ease(clamp((t-9.6)/FADE))*ease(clamp((57-t)/FADE));
+  $('hdr').style.opacity=hv; st.style.opacity=hv;
+  $('disc').style.opacity=ease(clamp((t-57.4)/.8));
+  let p=0;
+  STAGES.forEach((s,i)=>{
+    const el=$('st'+i); el.classList.toggle('on',t>=s[1]); el.classList.toggle('cur',t>=s[1]&&t<s[2]);
+    if(t>=s[1]) p=(i+.5+clamp((t-s[1])/(s[2]-s[1]))*.5)/STAGES.length;
+  });
+  $('fill').style.width=(p*100)+'%';
+  // slow ken-burns
+  document.querySelectorAll('[data-kb]').forEach(im=>{
+    const stg=im.closest('.stage'); const seg=SEG.find(s=>s[0]==stg.id);
+    const k=clamp((t-seg[1])/(seg[2]-seg[1])); im.style.transform=`scale(${1.02+.08*k})`;
+  });
+  // background drift
+  $('bg').style.transform=`translate(${Math.sin(t/9)*28}px,${Math.cos(t/11)*20}px)`;
+  // video: plays VID_START -> +10s, then holds
+  const vt=clamp(t-VID_START,0,9.96), n=Math.min(300,Math.floor(vt*30)+1);
+  $('vid').src='assets/frames/f'+String(n).padStart(3,'0')+'.jpg';
+  // compare slider: sweeps 50->0->100->50 style: start at left(inicio), sweep to right(final)
+  const c=clamp((t-51.2)/4.2); const pos=0.04+0.92*ease(c);
+  $('cmpB').style.clipPath=`inset(0 ${(1-pos)*100}% 0 0)`;
+  $('knob').style.left=(pos*100)+'%';
+};
+window.__seek(0);
+</script></body></html>

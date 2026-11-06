@@ -645,18 +645,9 @@ body{font-family:'Montserrat',system-ui,sans-serif}
   .cmp th:first-child,.cmp td:first-child{width:30%;font-size:13px}
 }
 
-/* --- Contacto: equipo --- */
+/* --- Contacto --- */
 .cta-sec .wrap{text-align:left}
 .cta-sec .sub{margin:0}
-.team-h{margin:44px 0 16px;font-size:20px}
-.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
-.member{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:4px}
-.member h4{font-size:17px;font-weight:700;color:var(--ink)}
-.member p{font-size:14px;color:var(--mute);margin:0 0 6px}
-.member .tel{font-weight:600;font-size:15px;color:var(--ink);padding:6px 0;min-height:44px;display:inline-flex;align-items:center}
-.member .tel:hover{color:var(--brand-blue-ink)}
-.m-actions{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap}
-.m-actions .btn-sm{padding:8px 16px}
 .contact-links{margin-top:32px;justify-content:flex-start}
 .cta-sec .addr{margin-top:20px;font-size:15px}
 
@@ -677,12 +668,11 @@ body{font-family:'Montserrat',system-ui,sans-serif}
 /* --- Captura para la imagen al compartir (se abre con #og) --- */
 .og .nav{display:none}
 .og .hero{padding-top:40px}
-@media(min-width:960px){.team{grid-template-columns:repeat(3,1fr)}}
 .og *{animation:none!important;transition:none!important}
 .og .reveal{opacity:1!important;transform:none!important}
 
 /* --- Ajuste final de lectura: texto corrido >= 14.5 px, nada bajo 13 px --- */
-.card p,.ind p,.f p,.steps span,.member p,.stat span,.d-tag,.meta,.addr,.cta-sec .addr{font-size:14.5px;line-height:1.55}
+.card p,.ind p,.f p,.steps span,.stat span,.d-tag,.meta,.addr,.cta-sec .addr{font-size:14.5px;line-height:1.55}
 .blk li{font-size:15.5px}
 .kpi span,.ind .lab,.foot p,.cmp thead th,.eyebrow{font-size:13px}
 .foot p{max-width:62ch}

@@ -95,22 +95,12 @@
     $("#steps").innerHTML = D.steps[lang].map(function (s) { return "<li><b>" + esc(s[0]) + "</b><span>" + esc(s[1]) + "</span></li>"; }).join("");
   }
 
-  function renderTeam() {
-    $("#team").innerHTML = D.team.map(function (p) {
-      var d = digits(p.tel);
-      return '<article class="member"><h4>' + esc(p.n) + "</h4><p>" + esc(p.r[lang]) + "</p>" +
-        '<a class="tel" href="tel:+' + d + '">' + esc(p.tel) + "</a>" +
-        '<div class="m-actions"><a class="btn btn-sm" href="https://wa.me/' + d + '" target="_blank" rel="noopener">' + t("ct.wa") + "</a>" +
-        '<a class="btn btn-sm ghost" href="mailto:' + esc(p.mail) + '">' + t("ct.mail") + "</a></div></article>";
-    }).join("");
-  }
-
   function applyI18n() {
     document.documentElement.lang = lang;
     $$("[data-i18n]").forEach(function (el) { el.textContent = t(el.getAttribute("data-i18n")); });
     $$(".lang button").forEach(function (b) { b.classList.toggle("on", b.dataset.lang === lang); b.setAttribute("aria-pressed", b.dataset.lang === lang); });
     var bg = $(".burger"); if (bg) bg.setAttribute("aria-label", t("menu"));
-    renderCards(); renderNeeds(); renderTabs(); renderDetail(); renderCompare(); renderIndustries(); renderTech(); renderTeam();
+    renderCards(); renderNeeds(); renderTabs(); renderDetail(); renderCompare(); renderIndustries(); renderTech();
     observeNew();
   }
 
@@ -165,14 +155,14 @@
     }
     var groups = [
       ".sec .wrap > .kicker, .sec .wrap > h2, .sec .wrap > .sub, .sec .wrap > h3",
-      "#cards .card", ".needs", "#tabs", "#detail", ".table-wrap", ".ind", ".stat", ".f", ".steps li", ".member", ".contact-links, .addr"
+      "#cards .card", ".needs", "#tabs", "#detail", ".table-wrap", ".ind", ".stat", ".f", ".steps li", ".contact-links, .addr"
     ];
     groups.forEach(function (sel) {
       $$(sel).forEach(function (el, i) {
         if (el.classList.contains("reveal") || el.hasAttribute("data-seen")) return;
         el.setAttribute("data-seen", "1");
         el.classList.add("reveal");
-        el.style.setProperty("--i", sel.indexOf("#cards") === 0 || sel === ".ind" || sel === ".stat" || sel === ".f" || sel === ".steps li" || sel === ".member" ? i % 6 : 0);
+        el.style.setProperty("--i", sel.indexOf("#cards") === 0 || sel === ".ind" || sel === ".stat" || sel === ".f" || sel === ".steps li" ? i % 6 : 0);
         io.observe(el);
       });
     });

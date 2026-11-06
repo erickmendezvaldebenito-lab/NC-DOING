@@ -680,18 +680,9 @@ body{font-family:'Montserrat',system-ui,sans-serif}
   .cmp th:first-child,.cmp td:first-child{width:30%;font-size:13px}
 }
 
-/* --- Contacto: equipo --- */
+/* --- Contacto --- */
 .cta-sec .wrap{text-align:left}
 .cta-sec .sub{margin:0}
-.team-h{margin:44px 0 16px;font-size:20px}
-.team{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
-.member{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:4px}
-.member h4{font-size:17px;font-weight:700;color:var(--ink)}
-.member p{font-size:14px;color:var(--mute);margin:0 0 6px}
-.member .tel{font-weight:600;font-size:15px;color:var(--ink);padding:6px 0;min-height:44px;display:inline-flex;align-items:center}
-.member .tel:hover{color:var(--brand-blue-ink)}
-.m-actions{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap}
-.m-actions .btn-sm{padding:8px 16px}
 .contact-links{margin-top:32px;justify-content:flex-start}
 .cta-sec .addr{margin-top:20px;font-size:15px}
 
@@ -712,12 +703,11 @@ body{font-family:'Montserrat',system-ui,sans-serif}
 /* --- Captura para la imagen al compartir (se abre con #og) --- */
 .og .nav{display:none}
 .og .hero{padding-top:40px}
-@media(min-width:960px){.team{grid-template-columns:repeat(3,1fr)}}
 .og *{animation:none!important;transition:none!important}
 .og .reveal{opacity:1!important;transform:none!important}
 
 /* --- Ajuste final de lectura: texto corrido >= 14.5 px, nada bajo 13 px --- */
-.card p,.ind p,.f p,.steps span,.member p,.stat span,.d-tag,.meta,.addr,.cta-sec .addr{font-size:14.5px;line-height:1.55}
+.card p,.ind p,.f p,.steps span,.stat span,.d-tag,.meta,.addr,.cta-sec .addr{font-size:14.5px;line-height:1.55}
 .blk li{font-size:15.5px}
 .kpi span,.ind .lab,.foot p,.cmp thead th,.eyebrow{font-size:13px}
 .foot p{max-width:62ch}
@@ -840,8 +830,6 @@ body{font-family:'Montserrat',system-ui,sans-serif}
     <p class="kicker" data-i18n="ct.kicker">SIGUIENTE PASO</p>
     <h2 data-i18n="ct.h2">Probemos NC Doing en tu proceso.</h2>
     <p class="sub" data-i18n="ct.sub">Pruebas de laboratorio, validación industrial y diseño a medida según lo que necesite tu producto.</p>
-    <h3 class="team-h" data-i18n="ct.team">Habla directo con nuestro equipo</h3>
-    <div class="team" id="team"></div>
     <div class="cta contact-links">
       <a class="btn" href="https://www.ncdoing.cl" target="_blank" rel="noopener">ncdoing.cl ›</a>
       <a class="btn ghost" href="https://www.linkedin.com/company/nc-doing/" target="_blank" rel="noopener">LinkedIn ›</a>
@@ -1029,15 +1017,6 @@ window.NC = {
     { i: "🧪", t: { es: "Mejorar mi formulación (resinas, adhesivos)", en: "Improve my formulation (resins, adhesives)" }, p: ["nanoplus", "nanocare", "nanoprotect"] }
   ],
 
-  team: [
-    { n: "Sebastián Niklitschek", r: { es: "Gerente General", en: "General Manager" }, tel: "+56 9 6420 8470", mail: "sebastian@ncdoing.cl" },
-    { n: "Camilo Salazar Ortiz", r: { es: "Gerente Operaciones", en: "Operations Manager" }, tel: "+56 9 5404 4497", mail: "camilo@ncdoing.cl" },
-    { n: "Alejandro Chaur", r: { es: "Gerente de Tecnología", en: "Technology Manager" }, tel: "+56 9 8148 8107", mail: "alejandro@ncdoing.cl" },
-    { n: "Javiera Vargas", r: { es: "Jefa de Proyectos", en: "Head of Projects" }, tel: "+56 9 8439 9364", mail: "javiera@ncdoing.cl" },
-    { n: "Olivia Godoy", r: { es: "Jefe de Laboratorio I+D", en: "Head of R&D Laboratory" }, tel: "+56 9 2771 4679", mail: "olivia@ncdoing.cl" },
-    { n: "Carolina Riffo", r: { es: "Jefa de Administración y Finanzas", en: "Head of Administration and Finance" }, tel: "+56 9 6585 1516", mail: "carolina.riffo@ncdoing.cl" }
-  ],
-
   i18n: {
     es: {
       "nav.products": "Productos", "nav.guide": "Guía", "nav.detail": "Detalle", "nav.compare": "Comparar", "nav.industries": "Industrias", "nav.tech": "Tecnología", "nav.contact": "Contáctanos",
@@ -1053,7 +1032,7 @@ window.NC = {
       "work.h3": "Modelo de trabajo",
       "ct.kicker": "SIGUIENTE PASO", "ct.h2": "Probemos NC Doing en tu proceso.", "ct.sub": "Pruebas de laboratorio, validación industrial y diseño a medida según lo que necesite tu producto.",
       "foot": "NC Doing · Empresa científico-tecnológica de la Región del Biobío. Los valores indicados provienen de ensayos de laboratorio bajo las normas citadas (ISO 22196, ASTM G154, NCh3060, NCh1974) y pueden variar según la aplicación.",
-      "l.benefits": "Beneficios", "l.value": "Valor agregado", "l.impact": "Impacto", "l.use": "Para", "l.size": "Formato", "l.more": "Ver ficha completa ›", "l.apps": "Aplicaciones", "l.challenge": "El desafío", "l.products": "Productos recomendados", "l.prod": "Producto", "l.share": "Copiar enlace", "l.copied": "¡Enlace copiado!", "ct.team": "Habla directo con nuestro equipo", "ct.wa": "WhatsApp", "ct.mail": "Correo", "menu": "Menú"
+      "l.benefits": "Beneficios", "l.value": "Valor agregado", "l.impact": "Impacto", "l.use": "Para", "l.size": "Formato", "l.more": "Ver ficha completa ›", "l.apps": "Aplicaciones", "l.challenge": "El desafío", "l.products": "Productos recomendados", "l.prod": "Producto", "l.share": "Copiar enlace", "l.copied": "¡Enlace copiado!", "menu": "Menú"
     },
     en: {
       "nav.products": "Products", "nav.guide": "Guide", "nav.detail": "Details", "nav.compare": "Compare", "nav.industries": "Industries", "nav.tech": "Technology", "nav.contact": "Contact us",
@@ -1069,7 +1048,7 @@ window.NC = {
       "work.h3": "How we work",
       "ct.kicker": "NEXT STEP", "ct.h2": "Let's try NC Doing in your process.", "ct.sub": "Lab testing, industrial validation and custom design for what your product needs.",
       "foot": "NC Doing · Science and technology company from the Biobío Region, Chile. Figures come from lab tests under the cited standards (ISO 22196, ASTM G154, NCh3060, NCh1974) and may vary by application.",
-      "l.benefits": "Benefits", "l.value": "Added value", "l.impact": "Impact", "l.use": "For", "l.size": "Size", "l.more": "See full details ›", "l.apps": "Applications", "l.challenge": "The challenge", "l.products": "Recommended products", "l.prod": "Product", "l.share": "Copy link", "l.copied": "Link copied!", "ct.team": "Talk directly to our team", "ct.wa": "WhatsApp", "ct.mail": "Email", "menu": "Menu"
+      "l.benefits": "Benefits", "l.value": "Added value", "l.impact": "Impact", "l.use": "For", "l.size": "Size", "l.more": "See full details ›", "l.apps": "Applications", "l.challenge": "The challenge", "l.products": "Recommended products", "l.prod": "Product", "l.share": "Copy link", "l.copied": "Link copied!", "menu": "Menu"
     }
   }
 };
@@ -1171,22 +1150,12 @@ window.NC = {
     $("#steps").innerHTML = D.steps[lang].map(function (s) { return "<li><b>" + esc(s[0]) + "</b><span>" + esc(s[1]) + "</span></li>"; }).join("");
   }
 
-  function renderTeam() {
-    $("#team").innerHTML = D.team.map(function (p) {
-      var d = digits(p.tel);
-      return '<article class="member"><h4>' + esc(p.n) + "</h4><p>" + esc(p.r[lang]) + "</p>" +
-        '<a class="tel" href="tel:+' + d + '">' + esc(p.tel) + "</a>" +
-        '<div class="m-actions"><a class="btn btn-sm" href="https://wa.me/' + d + '" target="_blank" rel="noopener">' + t("ct.wa") + "</a>" +
-        '<a class="btn btn-sm ghost" href="mailto:' + esc(p.mail) + '">' + t("ct.mail") + "</a></div></article>";
-    }).join("");
-  }
-
   function applyI18n() {
     document.documentElement.lang = lang;
     $$("[data-i18n]").forEach(function (el) { el.textContent = t(el.getAttribute("data-i18n")); });
     $$(".lang button").forEach(function (b) { b.classList.toggle("on", b.dataset.lang === lang); b.setAttribute("aria-pressed", b.dataset.lang === lang); });
     var bg = $(".burger"); if (bg) bg.setAttribute("aria-label", t("menu"));
-    renderCards(); renderNeeds(); renderTabs(); renderDetail(); renderCompare(); renderIndustries(); renderTech(); renderTeam();
+    renderCards(); renderNeeds(); renderTabs(); renderDetail(); renderCompare(); renderIndustries(); renderTech();
     observeNew();
   }
 
@@ -1241,14 +1210,14 @@ window.NC = {
     }
     var groups = [
       ".sec .wrap > .kicker, .sec .wrap > h2, .sec .wrap > .sub, .sec .wrap > h3",
-      "#cards .card", ".needs", "#tabs", "#detail", ".table-wrap", ".ind", ".stat", ".f", ".steps li", ".member", ".contact-links, .addr"
+      "#cards .card", ".needs", "#tabs", "#detail", ".table-wrap", ".ind", ".stat", ".f", ".steps li", ".contact-links, .addr"
     ];
     groups.forEach(function (sel) {
       $$(sel).forEach(function (el, i) {
         if (el.classList.contains("reveal") || el.hasAttribute("data-seen")) return;
         el.setAttribute("data-seen", "1");
         el.classList.add("reveal");
-        el.style.setProperty("--i", sel.indexOf("#cards") === 0 || sel === ".ind" || sel === ".stat" || sel === ".f" || sel === ".steps li" || sel === ".member" ? i % 6 : 0);
+        el.style.setProperty("--i", sel.indexOf("#cards") === 0 || sel === ".ind" || sel === ".stat" || sel === ".f" || sel === ".steps li" ? i % 6 : 0);
         io.observe(el);
       });
     });

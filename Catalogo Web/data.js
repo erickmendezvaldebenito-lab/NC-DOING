@@ -169,15 +169,6 @@ window.NC = {
     { i: "🧪", t: { es: "Mejorar mi formulación (resinas, adhesivos)", en: "Improve my formulation (resins, adhesives)" }, p: ["nanoplus", "nanocare", "nanoprotect"] }
   ],
 
-  team: [
-    { n: "Sebastián Niklitschek", r: { es: "Gerente General", en: "General Manager" }, tel: "+56 9 6420 8470", mail: "sebastian@ncdoing.cl" },
-    { n: "Camilo Salazar Ortiz", r: { es: "Gerente Operaciones", en: "Operations Manager" }, tel: "+56 9 5404 4497", mail: "camilo@ncdoing.cl" },
-    { n: "Alejandro Chaur", r: { es: "Gerente de Tecnología", en: "Technology Manager" }, tel: "+56 9 8148 8107", mail: "alejandro@ncdoing.cl" },
-    { n: "Javiera Vargas", r: { es: "Jefa de Proyectos", en: "Head of Projects" }, tel: "+56 9 8439 9364", mail: "javiera@ncdoing.cl" },
-    { n: "Olivia Godoy", r: { es: "Jefe de Laboratorio I+D", en: "Head of R&D Laboratory" }, tel: "+56 9 2771 4679", mail: "olivia@ncdoing.cl" },
-    { n: "Carolina Riffo", r: { es: "Jefa de Administración y Finanzas", en: "Head of Administration and Finance" }, tel: "+56 9 6585 1516", mail: "carolina.riffo@ncdoing.cl" }
-  ],
-
   i18n: {
     es: {
       "nav.products": "Productos", "nav.guide": "Guía", "nav.detail": "Detalle", "nav.compare": "Comparar", "nav.industries": "Industrias", "nav.tech": "Tecnología", "nav.contact": "Contáctanos",
@@ -193,7 +184,7 @@ window.NC = {
       "work.h3": "Modelo de trabajo",
       "ct.kicker": "SIGUIENTE PASO", "ct.h2": "Probemos NC Doing en tu proceso.", "ct.sub": "Pruebas de laboratorio, validación industrial y diseño a medida según lo que necesite tu producto.",
       "foot": "NC Doing · Empresa científico-tecnológica de la Región del Biobío. Los valores indicados provienen de ensayos de laboratorio bajo las normas citadas (ISO 22196, ASTM G154, NCh3060, NCh1974) y pueden variar según la aplicación.",
-      "l.benefits": "Beneficios", "l.value": "Valor agregado", "l.impact": "Impacto", "l.use": "Para", "l.size": "Formato", "l.more": "Ver ficha completa ›", "l.apps": "Aplicaciones", "l.challenge": "El desafío", "l.products": "Productos recomendados", "l.prod": "Producto", "l.share": "Copiar enlace", "l.copied": "¡Enlace copiado!", "ct.team": "Habla directo con nuestro equipo", "ct.wa": "WhatsApp", "ct.mail": "Correo", "menu": "Menú"
+      "l.benefits": "Beneficios", "l.value": "Valor agregado", "l.impact": "Impacto", "l.use": "Para", "l.size": "Formato", "l.more": "Ver ficha completa ›", "l.apps": "Aplicaciones", "l.challenge": "El desafío", "l.products": "Productos recomendados", "l.prod": "Producto", "l.share": "Copiar enlace", "l.copied": "¡Enlace copiado!", "menu": "Menú"
     },
     en: {
       "nav.products": "Products", "nav.guide": "Guide", "nav.detail": "Details", "nav.compare": "Compare", "nav.industries": "Industries", "nav.tech": "Technology", "nav.contact": "Contact us",
@@ -209,7 +200,7 @@ window.NC = {
       "work.h3": "How we work",
       "ct.kicker": "NEXT STEP", "ct.h2": "Let's try NC Doing in your process.", "ct.sub": "Lab testing, industrial validation and custom design for what your product needs.",
       "foot": "NC Doing · Science and technology company from the Biobío Region, Chile. Figures come from lab tests under the cited standards (ISO 22196, ASTM G154, NCh3060, NCh1974) and may vary by application.",
-      "l.benefits": "Benefits", "l.value": "Added value", "l.impact": "Impact", "l.use": "For", "l.size": "Size", "l.more": "See full details ›", "l.apps": "Applications", "l.challenge": "The challenge", "l.products": "Recommended products", "l.prod": "Product", "l.share": "Copy link", "l.copied": "Link copied!", "ct.team": "Talk directly to our team", "ct.wa": "WhatsApp", "ct.mail": "Email", "menu": "Menu"
+      "l.benefits": "Benefits", "l.value": "Added value", "l.impact": "Impact", "l.use": "For", "l.size": "Size", "l.more": "See full details ›", "l.apps": "Applications", "l.challenge": "The challenge", "l.products": "Recommended products", "l.prod": "Product", "l.share": "Copy link", "l.copied": "Link copied!", "menu": "Menu"
     }
   }
 };

@@ -106,7 +106,7 @@ Cambios sobre la primera versión. **Las fotos y la composición del home no se 
 - **Menú**: logo oficial en SVG, indicador de sección activa (subrayado), hamburguesa con panel en ≤ 860 px, cierre con Esc, encabezado que se afirma al hacer scroll.
 - **Movimiento** (solo `transform` y `opacity`, se apaga con `prefers-reduced-motion`): entrada escalonada de los textos del home, flotación suave de los frascos, aparición de cada sección al hacer scroll y contadores animados en cifras (`app.js → countUp`, `observeNew`).
 - **Legibilidad**: texto corrido ≥ 14,5 px y nada bajo 13 px (salvo 2 bloques pendientes), emoji reemplazados por texto/SVG, pestañas que se acomodan en líneas, comparador con nombres cortos en móvil.
-- **Contacto**: sección "Habla directo con nuestro equipo" con las 6 personas (datos de las tarjetas, en `data.js → team`): WhatsApp, correo y teléfono. **Son datos personales públicos en la web: revisar antes de publicar y borrar de `team` a quien no corresponda.**
+- **Contacto**: sin datos de personas (a propósito): botones a ncdoing.cl y LinkedIn, y la dirección. Falta definir si se agrega un correo o WhatsApp general.
 - **SEO y compartir**: título y descripción, Open Graph (`img/og.jpg`, 1200×630, generada con `index.html#og`), datos estructurados (Organización + 5 productos), `robots.txt`, `sitemap.xml`, ícono SVG.
 - **Publicación**: `vercel.json` (cabeceras y caché), `.vercelignore` (no sube HANDOFF, scripts ni la versión de un solo archivo).
 - **Reconstruir la versión de un solo archivo**: `node scripts/build-single.js`.

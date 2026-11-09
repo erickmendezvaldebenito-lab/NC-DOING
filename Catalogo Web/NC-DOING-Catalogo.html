@@ -1220,7 +1220,6 @@ window.NC = {
     if (!byId[id]) return;
     current = id;
     renderTabs(); renderDetail();
-    try { history.replaceState(null, "", "#" + id); } catch (e) {}
     if (scroll) $("#detalle").scrollIntoView({ behavior: reduced ? "auto" : "smooth" });
   }
 
@@ -1312,7 +1311,20 @@ window.NC = {
   onScroll();
 
   /* ---------- Clics ---------- */
+  function cleanUrl() { try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {} }
+  function goTo(id) {
+    if (id === "top" || id === "") { window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" }); return true; }
+    var el = document.getElementById(id);
+    if (!el) return false;
+    el.scrollIntoView({ behavior: reduced ? "auto" : "smooth" });
+    return true;
+  }
   document.addEventListener("click", function (e) {
+    var ln = e.target.closest('a[href^="#"]');
+    if (ln && !ln.hasAttribute("data-open")) {
+      var id = ln.getAttribute("href").slice(1);
+      if (goTo(id)) { e.preventDefault(); cleanUrl(); setMenu(false); return; }
+    }
     if (e.target.closest(".links a")) setMenu(false);
     var o = e.target.closest("[data-open]");
     if (o) { e.preventDefault(); select(o.dataset.open, true); return; }
@@ -1339,7 +1351,10 @@ window.NC = {
   if (byId[h]) current = h;
   if (h === "og") document.documentElement.classList.add("og"); // captura para la imagen al compartir
   applyI18n();
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
   if (byId[h]) setTimeout(function () { $("#detalle").scrollIntoView(); }, 50);
+  else if (h && h !== "top" && h !== "og" && document.getElementById(h)) setTimeout(function () { goTo(h); }, 50);
+  else window.scrollTo(0, 0);
   window.addEventListener("hashchange", function () { var x = location.hash.slice(1); if (byId[x]) select(x, true); });
 })();
 </script>
